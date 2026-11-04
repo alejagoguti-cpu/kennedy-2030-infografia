@@ -3,37 +3,49 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kennedy 2030 | Infografía Científica - Diapositivas 1 & 2</title>
+  <title>Kennedy 2030 — Explicación Generativa & Dinámica Territorial</title>
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
-  <!-- Google Fonts -->
+  <!-- Google Fonts: Editorial Serif + Minimal Sans + Monospace -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
   <!-- Lucide Icons CDN -->
   <script src="https://unpkg.com/lucide@latest"></script>
+  
   <script>
     tailwind.config = {
-      darkMode: 'class',
       theme: {
         extend: {
           fontFamily: {
+            serif: ['"Cormorant Garamond"', 'Georgia', 'serif'],
             sans: ['"Plus Jakarta Sans"', 'sans-serif'],
-            display: ['"Space Grotesk"', 'sans-serif'],
             mono: ['"JetBrains Mono"', 'monospace'],
           },
           colors: {
-            slate: {
-              950: '#090d16',
-              900: '#0f172a',
-              850: '#131e35',
+            paper: {
+              DEFAULT: '#f9f8f4',
+              subtle: '#f3f1ea',
+              darker: '#eae6dc',
+              card: '#ffffff',
             },
-            kennedy: {
-              red: '#ef4444',
-              emerald: '#10b981',
-              cyan: '#06b6d4',
-              amber: '#f59e0b',
-              violet: '#8b5cf6',
+            ink: {
+              DEFAULT: '#1c221e',
+              muted: '#525a55',
+              faded: '#7d8780',
+              border: '#ddd8cb',
+            },
+            palette: {
+              sage: '#dbe7dc',
+              sageDark: '#335c3d',
+              blush: '#f5ded6',
+              blushDark: '#994a36',
+              sand: '#f5eedb',
+              sandDark: '#856a29',
+              sky: '#dde8ec',
+              skyDark: '#365a6b',
+              lavender: '#ebe5ee',
+              lavenderDark: '#5a4666',
             }
           }
         }
@@ -41,559 +53,569 @@
     }
   </script>
   <style>
-    .glass-card {
-      background: rgba(19, 30, 53, 0.7);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      border: 1px solid rgba(255, 255, 255, 0.08);
+    body {
+      background-color: #f9f8f4;
+      color: #1c221e;
     }
-    .glass-card-danger {
-      background: rgba(35, 14, 18, 0.65);
-      backdrop-filter: blur(12px);
-      border: 1px solid rgba(239, 68, 68, 0.25);
+    .poster-border {
+      border: 1px solid #ddd8cb;
     }
-    .glass-card-success {
-      background: rgba(10, 36, 28, 0.65);
-      backdrop-filter: blur(12px);
-      border: 1px solid rgba(16, 185, 129, 0.25);
+    .paper-texture {
+      background-color: #f9f8f4;
+      background-image: radial-gradient(rgba(28, 34, 30, 0.04) 1px, transparent 1px);
+      background-size: 20px 20px;
     }
-    .glow-cyan {
-      box-shadow: 0 0 35px -8px rgba(6, 182, 212, 0.35);
+    .arch-card {
+      background: #ffffff;
+      border: 1px solid #e5e0d3;
+      box-shadow: 0 2px 12px -2px rgba(45, 41, 35, 0.04);
+      transition: all 0.25s ease;
     }
-    .glow-amber {
-      box-shadow: 0 0 35px -8px rgba(245, 158, 11, 0.35);
+    .arch-card:hover {
+      border-color: #b8b19f;
+      box-shadow: 0 6px 20px -3px rgba(45, 41, 35, 0.08);
     }
-    .grid-bg {
-      background-size: 32px 32px;
-      background-image: 
-        linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-        linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    .connector-dashed {
+      border-style: dashed;
+      border-color: #beb7a5;
+    }
+    .pill-tag {
+      font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+      letter-spacing: 0.08em;
     }
   </style>
 </head>
-<body class="bg-slate-950 text-slate-100 font-sans min-h-screen selection:bg-cyan-500 selection:text-black grid-bg antialiased pb-20">
+<body class="paper-texture min-h-screen text-ink antialiased selection:bg-palette-blush selection:text-ink pb-24">
 
-  <!-- TOP BAR / NAVIGATION -->
-  <header class="border-b border-slate-800/80 bg-slate-950/85 backdrop-blur sticky top-0 z-50">
+  <!-- TOP MINIMAL NAV / SLIDE SWITCHER -->
+  <header class="border-b border-ink-border bg-paper/90 backdrop-blur sticky top-0 z-40">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
       
-      <!-- Slide Selector Buttons -->
-      <div class="flex items-center space-x-2">
-        <button id="btnSlide1" onclick="switchSlide(1)" class="flex items-center space-x-2 px-3 py-1.5 rounded-lg text-xs font-mono font-bold transition-all bg-cyan-500 text-slate-950 shadow-md">
-          <i data-lucide="layers" class="w-3.5 h-3.5"></i>
-          <span>DIAPOSITIVA 1</span>
-        </button>
-        <button id="btnSlide2" onclick="switchSlide(2)" class="flex items-center space-x-2 px-3 py-1.5 rounded-lg text-xs font-mono font-bold transition-all bg-slate-900 text-slate-300 hover:text-white border border-slate-800">
-          <i data-lucide="git-fork" class="w-3.5 h-3.5"></i>
-          <span>DIAPOSITIVA 2</span>
-        </button>
+      <div class="flex items-center space-x-3 sm:space-x-4">
+        <span class="text-xs font-mono font-semibold tracking-widest uppercase text-ink-muted">KENNEDY 2030</span>
+        <span class="text-ink-border">/</span>
+        
+        <!-- Pestañas de Diapositiva -->
+        <div class="inline-flex p-1 bg-paper-subtle rounded-lg border border-ink-border">
+          <button id="btnTab1" onclick="switchSlide(1)" class="px-3 py-1 rounded text-xs font-sans font-semibold tracking-wide transition-all bg-white text-ink shadow-sm">
+            01. Modelos Mentales
+          </button>
+          <button id="btnTab2" onclick="switchSlide(2)" class="px-3 py-1 rounded text-xs font-sans font-semibold tracking-wide transition-all text-ink-muted hover:text-ink">
+            02. Bucles de Colapso
+          </button>
+          <button id="btnTabAll" onclick="switchSlide('all')" class="hidden sm:inline-block px-3 py-1 rounded text-xs font-sans font-semibold tracking-wide transition-all text-ink-muted hover:text-ink">
+            Póster Completo
+          </button>
+        </div>
       </div>
 
-      <!-- Controls & Links -->
       <div class="flex items-center space-x-3">
-        <button id="toggleTeleprompterBtn" onclick="toggleTeleprompter()" class="flex items-center space-x-2 text-xs font-medium px-3.5 py-2 rounded-lg bg-amber-500/10 text-amber-300 border border-amber-500/30 hover:bg-amber-500/20 transition-all cursor-pointer">
-          <i data-lucide="mic" class="w-4 h-4"></i>
-          <span class="font-mono">Modo Sustentación (Script)</span>
+        <button onclick="toggleTeleprompter()" class="flex items-center space-x-2 text-xs font-medium px-3.5 py-1.5 rounded-full bg-palette-sand text-palette-sandDark border border-[#dfd4ba] hover:bg-[#ece2c7] transition-all cursor-pointer">
+          <i data-lucide="mic" class="w-3.5 h-3.5"></i>
+          <span class="font-sans font-semibold tracking-tight">Notas de Sustentación</span>
         </button>
-        <a href="https://github.com/alejagoguti-cpu/kennedy-2030-infografia" target="_blank" class="flex items-center space-x-1.5 text-xs text-slate-400 hover:text-white px-3 py-2 rounded-lg hover:bg-slate-800 transition-colors">
-          <i data-lucide="github" class="w-4 h-4"></i>
+        <a href="https://github.com/alejagoguti-cpu/kennedy-2030-infografia" target="_blank" class="text-xs font-mono text-ink-muted hover:text-ink flex items-center space-x-1 pl-2">
+          <i data-lucide="github" class="w-3.5 h-3.5"></i>
           <span class="hidden md:inline">GitHub</span>
         </a>
       </div>
     </div>
   </header>
 
-  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 space-y-10">
+  <!-- PÓSTER PRINCIPAL -->
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 space-y-12">
 
-    <!-- ================================================================= -->
-    <!-- CONTENIDO DIAPOSITIVA 1                                           -->
-    <!-- ================================================================= -->
-    <div id="slide1View" class="space-y-10">
+    <!-- CABECERA EDITORIAL ESTILO ARCHITECTURAL FOLIO -->
+    <section class="border-b border-ink-border pb-8">
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
+        <div>
+          <div class="flex items-center space-x-2 text-xs font-mono text-ink-faded mb-2 uppercase tracking-widest">
+            <span>Investigación Urbana & Dinámica de Sistemas</span>
+            <span>•</span>
+            <span>Localidad de Kennedy, Bogotá D.C.</span>
+          </div>
+          <h1 class="text-4xl sm:text-6xl font-serif font-bold tracking-tight text-ink">
+            Once upon a time in <span class="italic font-normal">Kennedy 2030</span>
+          </h1>
+          <p class="mt-2 text-lg sm:text-xl font-serif italic text-ink-muted">
+            form follows fictions &bull; from ego-prediction to eco-generation
+          </p>
+        </div>
+
+        <div class="flex items-center gap-3 self-start md:self-end">
+          <div class="p-3 bg-white rounded-xl border border-ink-border text-center min-w-[110px]">
+            <span class="block text-[10px] font-mono uppercase text-ink-faded">Paradigma</span>
+            <span class="text-xs font-bold font-sans text-palette-sageDark">Explicación</span>
+          </div>
+          <div class="p-3 bg-white rounded-xl border border-ink-border text-center min-w-[110px]">
+            <span class="block text-[10px] font-mono uppercase text-ink-faded">Entorno</span>
+            <span class="text-xs font-bold font-sans text-palette-skyDark">Kennedy 3D</span>
+          </div>
+          <div class="p-3 bg-white rounded-xl border border-ink-border text-center min-w-[110px]">
+            <span class="block text-[10px] font-mono uppercase text-ink-faded">Metodología</span>
+            <span class="text-xs font-bold font-sans text-palette-blushDark">Epstein 2008</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ============================================================== -->
+    <!-- SECCIÓN DIAPOSITIVA 1                                          -->
+    <!-- ============================================================== -->
+    <section id="sectionD1" class="space-y-8">
       
-      <!-- HERO SECTION D1 -->
-      <section class="text-center md:text-left relative py-4">
-        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 mb-3">
-          <i data-lucide="network" class="w-3.5 h-3.5"></i>
-          Diapositiva 1 · Epistemología de la Simulación y Territorio Popular
+      <!-- SUBTÍTULO D1 -->
+      <div class="flex items-center justify-between border-b border-ink-border pb-3">
+        <div class="flex items-center space-x-3">
+          <span class="w-6 h-6 rounded-full bg-palette-sage text-palette-sageDark flex items-center justify-center font-mono text-xs font-bold">1</span>
+          <h2 class="text-2xl font-serif font-bold text-ink">¿Por qué modelar Kennedy 2030?</h2>
         </div>
-        <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold font-display tracking-tight text-white max-w-5xl">
-          ¿Por qué modelar <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-emerald-400 to-amber-300">Kennedy 2030</span>?
-        </h1>
-        <p class="mt-2 text-lg sm:text-xl text-slate-300 font-display font-medium max-w-4xl">
-          De los modelos mentales implícitos a la explicación generativa
-        </p>
-        <div class="mt-3 flex items-center justify-start gap-2 text-sm text-cyan-300/80 font-mono">
-          <i data-lucide="arrow-right-circle" class="w-4 h-4 text-cyan-400 flex-shrink-0"></i>
-          <span>Superando el mito de la predicción: hacer transparentes los supuestos del territorio popular</span>
-        </div>
-      </section>
+        <span class="text-xs font-mono text-ink-faded">De los modelos mentales implícitos a la explicación generativa</span>
+      </div>
 
-      <!-- DIAGRAMA VISUAL D1 -->
-      <section class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
+      <!-- DIAGRAMA TRIPARTITO MINIMALISTA CON PALETA SAGE / BLUSH / PAPER -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
         
-        <!-- LADO IZQUIERDO -->
-        <div class="lg:col-span-5 glass-card-danger rounded-2xl p-6 relative overflow-hidden flex flex-col justify-between">
-          <div class="absolute -right-8 -top-8 w-32 h-32 bg-red-500/10 rounded-full blur-2xl pointer-events-none"></div>
+        <!-- CARD IZQUIERDA: MODELO IMPLÍCITO (BLUSH / ROSADO PASTEL) -->
+        <div class="lg:col-span-5 bg-white border border-[#eed0c5] rounded-2xl p-6 relative flex flex-col justify-between">
+          <div class="absolute top-0 left-0 right-0 h-1.5 bg-palette-blush rounded-t-2xl"></div>
           <div>
-            <div class="flex items-center justify-between border-b border-red-500/20 pb-4 mb-4">
-              <div class="flex items-center space-x-3">
-                <div class="p-2.5 bg-red-500/20 text-red-400 rounded-xl">
-                  <i data-lucide="eye-off" class="w-6 h-6"></i>
-                </div>
-                <div>
-                  <h3 class="text-xs font-mono uppercase tracking-wider text-red-400">Punto de Partida</h3>
-                  <h2 class="text-lg font-bold font-display text-white">Modelo Mental Implícito</h2>
-                </div>
-              </div>
-              <span class="px-2 py-0.5 text-[10px] font-mono rounded bg-red-950 text-red-300 border border-red-800">CAJA NEGRA</span>
+            <div class="flex items-center justify-between mb-4">
+              <span class="text-[11px] font-mono uppercase tracking-wider text-palette-blushDark bg-palette-blush px-2.5 py-0.5 rounded-full font-bold">
+                Punto de Partida
+              </span>
+              <span class="text-xs font-mono text-ink-faded">Opacidad Epistémica</span>
             </div>
-
-            <p class="text-xs sm:text-sm text-slate-300 mb-4 leading-relaxed">
-              Todo actor en el territorio opera ya con un modelo conceptual propio, pero sus reglas son invisibles, opacas y no contrastables.
+            <h3 class="text-2xl font-serif font-bold text-ink">Modelo Mental Implícito</h3>
+            <p class="text-xs text-ink-muted mt-2 leading-relaxed">
+              La intuición burocrática y los prejuicios de barrio operan bajo reglas no contrastables que nadie puede auditar.
             </p>
 
-            <div class="space-y-2.5">
-              <div class="p-3 rounded-xl bg-slate-950/60 border border-red-900/40">
-                <div class="flex items-start gap-2">
-                  <i data-lucide="alert-octagon" class="w-4 h-4 text-red-400 mt-0.5 flex-shrink-0"></i>
-                  <div>
-                    <span class="text-xs font-bold text-red-300 block font-mono">PREJUICIO COMUNITARIO</span>
-                    <p class="text-xs text-slate-300"><em>"La gente pobre jamás va a consumir setas u hongos gourmet."</em></p>
-                  </div>
-                </div>
+            <div class="mt-5 space-y-3">
+              <div class="p-3.5 rounded-xl bg-palette-subtle border border-ink-border">
+                <span class="text-[10px] font-mono uppercase text-palette-blushDark font-bold tracking-wider block">Prejuicio Comunitario</span>
+                <p class="text-xs font-serif italic text-ink mt-0.5 text-slate-800">
+                  "La gente pobre nunca va a comer hongos comestibles; es un alimento exótico."
+                </p>
               </div>
 
-              <div class="p-3 rounded-xl bg-slate-950/60 border border-red-900/40">
-                <div class="flex items-start gap-2">
-                  <i data-lucide="file-x" class="w-4 h-4 text-red-400 mt-0.5 flex-shrink-0"></i>
-                  <div>
-                    <span class="text-xs font-bold text-red-300 block font-mono">INTUICIÓN BUROCRÁTICA</span>
-                    <p class="text-xs text-slate-300"><em>"Las huertas comunitarias siempre colapsan únicamente por desidia vecinal."</em></p>
-                  </div>
-                </div>
+              <div class="p-3.5 rounded-xl bg-palette-subtle border border-ink-border">
+                <span class="text-[10px] font-mono uppercase text-palette-blushDark font-bold tracking-wider block">Intuición Burocrática</span>
+                <p class="text-xs font-serif italic text-ink mt-0.5 text-slate-800">
+                  "Las huertas urbanas comunitarias siempre fracasan simplemente por desidia vecinal."
+                </p>
               </div>
 
-              <div class="p-3 rounded-xl bg-slate-950/60 border border-red-900/40">
-                <div class="flex items-start gap-2">
-                  <i data-lucide="slash" class="w-4 h-4 text-red-400 mt-0.5 flex-shrink-0"></i>
-                  <div>
-                    <span class="text-xs font-bold text-red-300 block font-mono">LIMITACIÓN EPISTÉMICA</span>
-                    <p class="text-xs text-slate-300">Oculta supuestos. Imposible de calibrar, falsear o debatir con rigor público.</p>
-                  </div>
-                </div>
+              <div class="p-3.5 rounded-xl bg-palette-subtle border border-ink-border">
+                <span class="text-[10px] font-mono uppercase text-ink-faded font-bold tracking-wider block">Falla Crítica</span>
+                <p class="text-xs text-ink-muted mt-0.5">
+                  Caja negra con supuestos ocultos. Imposible de calibrar, falsear o debatir democráticamente.
+                </p>
               </div>
             </div>
           </div>
 
-          <div class="mt-5 pt-3 border-t border-red-900/30 text-xs text-red-300/80 font-mono flex items-center justify-between">
-            <span>❌ Supuestos no declarados</span>
-            <span>Opaco e intocable</span>
+          <div class="mt-6 pt-3 border-t border-ink-border flex items-center justify-between text-[11px] font-mono text-palette-blushDark">
+            <span>● Supuestos Incontrastables</span>
+            <span>Caja Negra</span>
           </div>
         </div>
 
-        <!-- CENTRO -->
+        <!-- CENTRO: TRANSICIÓN DE EPSTEIN (LÍNEAS PUNTEADAS & NODO) -->
         <div class="lg:col-span-2 flex flex-col items-center justify-center py-4 lg:py-0">
           <div class="w-full flex lg:flex-col items-center justify-center gap-3">
-            <div class="h-0.5 w-10 lg:w-0.5 lg:h-14 bg-gradient-to-r lg:bg-gradient-to-b from-red-500 to-cyan-400"></div>
+            <div class="h-0.5 w-10 lg:w-0.5 lg:h-16 connector-dashed border-t lg:border-l"></div>
             
-            <div class="p-3.5 rounded-2xl bg-slate-900 border border-cyan-500/40 shadow-lg text-center max-w-[190px] glow-cyan">
-              <div class="w-7 h-7 mx-auto mb-1.5 rounded-lg bg-cyan-500/20 text-cyan-300 flex items-center justify-center">
-                <i data-lucide="refresh-cw" class="w-3.5 h-3.5"></i>
+            <div class="p-4 rounded-2xl bg-white border border-ink-border text-center shadow-sm max-w-[190px]">
+              <div class="w-8 h-8 mx-auto mb-1.5 rounded-full bg-palette-sand flex items-center justify-center text-palette-sandDark">
+                <i data-lucide="arrow-right-left" class="w-4 h-4"></i>
               </div>
-              <div class="text-[10px] font-mono text-cyan-400 font-bold uppercase tracking-wider">Metodología</div>
-              <div class="text-xs font-bold text-white mt-0.5">Epstein (2008)</div>
-              <p class="text-[10px] text-slate-300 mt-1 leading-tight">De la intuición tácita al algoritmo auditable</p>
+              <div class="text-[10px] font-mono uppercase text-palette-sandDark font-bold">Puente Teórico</div>
+              <div class="text-xs font-bold font-serif text-ink mt-0.5">Epstein (2008)</div>
+              <p class="text-[10px] text-ink-muted mt-1 leading-tight">Formalizar reglas para debatirlas en lo público</p>
             </div>
 
-            <div class="h-0.5 w-10 lg:w-0.5 lg:h-14 bg-gradient-to-r lg:bg-gradient-to-b from-cyan-400 to-emerald-400"></div>
+            <div class="h-0.5 w-10 lg:w-0.5 lg:h-16 connector-dashed border-t lg:border-l"></div>
           </div>
         </div>
 
-        <!-- LADO DERECHO -->
-        <div class="lg:col-span-5 glass-card-success rounded-2xl p-6 relative overflow-hidden flex flex-col justify-between">
-          <div class="absolute -right-8 -top-8 w-32 h-32 bg-emerald-500/10 rounded-full blur-2xl pointer-events-none"></div>
+        <!-- CARD DERECHA: MODELO COMPUTACIONAL (SAGE / VERDE SALVIA) -->
+        <div class="lg:col-span-5 bg-white border border-[#c4dac5] rounded-2xl p-6 relative flex flex-col justify-between">
+          <div class="absolute top-0 left-0 right-0 h-1.5 bg-palette-sage rounded-t-2xl"></div>
           <div>
-            <div class="flex items-center justify-between border-b border-emerald-500/20 pb-4 mb-4">
-              <div class="flex items-center space-x-3">
-                <div class="p-2.5 bg-emerald-500/20 text-emerald-400 rounded-xl">
-                  <i data-lucide="cpu" class="w-6 h-6"></i>
-                </div>
-                <div>
-                  <h3 class="text-xs font-mono uppercase tracking-wider text-emerald-400">Nuestra Propuesta</h3>
-                  <h2 class="text-lg font-bold font-display text-white">Modelo Computacional Explícito</h2>
-                </div>
-              </div>
-              <span class="px-2 py-0.5 text-[10px] font-mono rounded bg-emerald-950 text-emerald-300 border border-emerald-800">SIMULACIÓN 3D + ABM</span>
+            <div class="flex items-center justify-between mb-4">
+              <span class="text-[11px] font-mono uppercase tracking-wider text-palette-sageDark bg-palette-sage px-2.5 py-0.5 rounded-full font-bold">
+                Nuestra Propuesta
+              </span>
+              <span class="text-xs font-mono text-ink-faded">Transparencia Generativa</span>
             </div>
-
-            <p class="text-xs sm:text-sm text-slate-300 mb-4 leading-relaxed">
-              Hacer públicas y ejecutables las reglas microscópicas para que la comunidad y los técnicos puedan evaluarlas en conjunto.
+            <h3 class="text-2xl font-serif font-bold text-ink">Modelo Computacional Explícito</h3>
+            <p class="text-xs text-ink-muted mt-2 leading-relaxed">
+              Reglas locales y parámetros biológicos y sociales puestos en código para que la comunidad decida.
             </p>
 
-            <div class="space-y-2.5">
-              <div class="p-3 rounded-xl bg-slate-950/60 border border-emerald-900/40">
-                <div class="flex items-start gap-2">
-                  <i data-lucide="layers" class="w-4 h-4 text-emerald-400 mt-0.5 flex-shrink-0"></i>
-                  <div>
-                    <span class="text-xs font-bold text-emerald-300 block font-mono">ENTORNO MORFOLÓGICO 3D</span>
-                    <p class="text-xs text-slate-300">Topografía de Kennedy: María Paz, Patio Bonito y Humedal El Burro.</p>
-                  </div>
-                </div>
+            <div class="mt-5 space-y-3">
+              <div class="p-3.5 rounded-xl bg-palette-subtle border border-ink-border">
+                <span class="text-[10px] font-mono uppercase text-palette-sageDark font-bold tracking-wider block">Entorno Morfológico 3D</span>
+                <p class="text-xs text-ink-muted mt-0.5">
+                  Topografía real de María Paz, Patio Bonito y la ronda ecológica del Humedal El Burro.
+                </p>
               </div>
 
-              <div class="p-3 rounded-xl bg-slate-950/60 border border-emerald-900/40">
-                <div class="flex items-start gap-2">
-                  <i data-lucide="users" class="w-4 h-4 text-emerald-400 mt-0.5 flex-shrink-0"></i>
-                  <div>
-                    <span class="text-xs font-bold text-emerald-300 block font-mono">AGENTES HETEROGÉNEOS</span>
-                    <p class="text-xs text-slate-300">Hogares (aversión/gusto), Tenderos (margen/fiado) y Gestores de huerta.</p>
-                  </div>
-                </div>
+              <div class="p-3.5 rounded-xl bg-palette-subtle border border-ink-border">
+                <span class="text-[10px] font-mono uppercase text-palette-sageDark font-bold tracking-wider block">Agentes Heterogéneos</span>
+                <p class="text-xs text-ink-muted mt-0.5">
+                  Hogares (aversión/gusto cultural), Tenderos (margen y cupo de fiado) y Gestores de huerta.
+                </p>
               </div>
 
-              <div class="p-3 rounded-xl bg-slate-950/60 border border-emerald-900/40">
-                <div class="flex items-start gap-2">
-                  <i data-lucide="sprout" class="w-4 h-4 text-emerald-400 mt-0.5 flex-shrink-0"></i>
-                  <div>
-                    <span class="text-xs font-bold text-emerald-300 block font-mono">AGENTES NO HUMANOS</span>
-                    <p class="text-xs text-slate-300">Micelio fúngico que coloniza vs. moho contaminante que compite por humedad.</p>
-                  </div>
-                </div>
+              <div class="p-3.5 rounded-xl bg-palette-subtle border border-ink-border">
+                <span class="text-[10px] font-mono uppercase text-palette-sageDark font-bold tracking-wider block">Agentes No Humanos</span>
+                <p class="text-xs text-ink-muted mt-0.5">
+                  Micelio colonizador de sustratos versus moho infeccioso que compite por humedad.
+                </p>
               </div>
             </div>
           </div>
 
-          <div class="mt-5 pt-3 border-t border-emerald-900/30 text-xs text-emerald-300/80 font-mono flex items-center justify-between">
-            <span>✓ Supuestos transparentes</span>
-            <span>Falsable y calibrable</span>
+          <div class="mt-6 pt-3 border-t border-ink-border flex items-center justify-between text-[11px] font-mono text-palette-sageDark">
+            <span>✓ Supuestos Transparentes</span>
+            <span>Explicación Bottom-up</span>
           </div>
         </div>
 
-      </section>
+      </div>
 
-      <!-- 3 TARJETAS D1 -->
-      <section class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <div class="glass-card rounded-2xl p-6 border-slate-800">
-          <div class="w-9 h-9 rounded-xl bg-cyan-500/10 text-cyan-400 flex items-center justify-center mb-3">
-            <span class="font-mono font-bold text-base">01</span>
-          </div>
-          <h3 class="text-base font-bold font-display text-white">"Usted ya es un modelador"</h3>
-          <p class="text-xs text-cyan-400 font-mono">Joshua M. Epstein (2008)</p>
-          <p class="text-xs text-slate-300 mt-3 leading-relaxed">
-            Líderes comunales, ediles y comerciantes deciden con axiomas no comprobados. Modelar significa poner las reglas a la luz pública para debatirlas.
-          </p>
-        </div>
-
-        <div class="glass-card rounded-2xl p-6 border-slate-800">
-          <div class="w-9 h-9 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center mb-3">
-            <span class="font-mono font-bold text-base">02</span>
-          </div>
-          <h3 class="text-base font-bold font-display text-white">Explicar no es Predecir</h3>
-          <p class="text-xs text-emerald-400 font-mono">Razón 1 de Epstein</p>
-          <p class="text-xs text-slate-300 mt-3 leading-relaxed">
-            Como la tectónica de placas que explica sismos sin fijar minutos exactos. Buscamos demostrar cómo reglas locales sostienen un circuito alternativo a Corabastos.
-          </p>
-        </div>
-
-        <div class="glass-card rounded-2xl p-6 border-slate-800">
-          <div class="w-9 h-9 rounded-xl bg-amber-500/10 text-amber-400 flex items-center justify-center mb-3">
-            <span class="font-mono font-bold text-base">03</span>
-          </div>
-          <h3 class="text-base font-bold font-display text-white">Territorio y Agentes Vivos</h3>
-          <p class="text-xs text-amber-400 font-mono">María Paz, Patio Bonito, Humedal</p>
-          <p class="text-xs text-slate-300 mt-3 leading-relaxed">
-            Interacción entre economía del fiado barrial, fatiga de gestores de huerta, microclima del humedal y la colonización biológica del micelio comestible.
-          </p>
-        </div>
-      </section>
-
-      <!-- AGENT EXPLORER D1 -->
-      <section class="glass-card rounded-2xl p-6 border-slate-800">
-        <div class="flex flex-col sm:flex-row sm:items-center justify-between pb-4 mb-4 border-b border-slate-800 gap-2">
+      <!-- 3 COLUMNAS CONCEPTUALES D1 (ESTILO EDITORIAL MINIMALISTA) -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        
+        <div class="arch-card p-6 rounded-2xl flex flex-col justify-between">
           <div>
-            <h2 class="text-base font-bold font-display text-white flex items-center gap-2">
-              <i data-lucide="scan" class="w-4 h-4 text-cyan-400"></i>
-              Auditoría de Reglas Explícitas en Kennedy 2030
-            </h2>
-            <p class="text-xs text-slate-400">Selecciona una entidad para examinar sus parámetros en código</p>
+            <span class="text-xs font-mono font-bold text-palette-blushDark bg-palette-blush/60 px-2.5 py-0.5 rounded">01</span>
+            <h4 class="text-lg font-serif font-bold text-ink mt-3">"Usted ya es un modelador"</h4>
+            <p class="text-xs font-mono text-ink-faded">Epstein (2008)</p>
+            <p class="text-xs text-ink-muted mt-3 leading-relaxed">
+              Nadie toma decisiones en el territorio popular sin un modelo conceptual previo. Quien dice "no usar modelos" opera con el más peligroso de todos: el implícito, cargado de prejuicios no confesados.
+            </p>
           </div>
+          <div class="mt-4 pt-3 border-t border-ink-border text-[11px] font-mono text-ink-faded">
+            Democratizar los supuestos en código abierto.
+          </div>
+        </div>
+
+        <div class="arch-card p-6 rounded-2xl flex flex-col justify-between">
+          <div>
+            <span class="text-xs font-mono font-bold text-palette-sageDark bg-palette-sage/60 px-2.5 py-0.5 rounded">02</span>
+            <h4 class="text-lg font-serif font-bold text-ink mt-3">Explicar no es Predecir</h4>
+            <p class="text-xs font-mono text-ink-faded">Razón 1 de Epstein</p>
+            <p class="text-xs text-ink-muted mt-3 leading-relaxed">
+              La tectónica de placas explica sismos sin adivinar el minuto exacto del temblor. Nuestro fin no es predecir los kilos exactos de hongos en 2030, sino demostrar si un circuito local puede subsistir sin colapsar ante Corabastos.
+            </p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-ink-border text-[11px] font-mono text-ink-faded">
+            Mecánica causal generativa.
+          </div>
+        </div>
+
+        <div class="arch-card p-6 rounded-2xl flex flex-col justify-between">
+          <div>
+            <span class="text-xs font-mono font-bold text-palette-sandDark bg-palette-sand/60 px-2.5 py-0.5 rounded">03</span>
+            <h4 class="text-lg font-serif font-bold text-ink mt-3">Territorio Situado</h4>
+            <p class="text-xs font-mono text-ink-faded">María Paz & Patio Bonito</p>
+            <p class="text-xs text-ink-muted mt-3 leading-relaxed">
+              La simulación se sitúa en la morfología concreta de Kennedy: el sol en los callejones, la humedad de la ronda del Humedal El Burro y la red de crédito informal ("el fiado") que sostiene el consumo familiar.
+            </p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-ink-border text-[11px] font-mono text-ink-faded">
+            Ecología urbana e hibridación comunitaria.
+          </div>
+        </div>
+
+      </div>
+
+      <!-- EXPLORADOR INTERACTIVO DE AGENTES (ESTILO CIENTÍFICO-EDITORIAL) -->
+      <div class="arch-card p-6 rounded-2xl">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between pb-4 border-b border-ink-border gap-2">
+          <div>
+            <span class="text-[10px] font-mono uppercase text-ink-faded tracking-widest block">Parámetros del Ecosistema</span>
+            <h3 class="text-xl font-serif font-bold text-ink">Explorador de Agentes Humanos y Biológicos</h3>
+          </div>
+          
           <div class="flex flex-wrap gap-1.5" id="agentTabs">
-            <button onclick="showAgentDetail('hogares')" class="tab-btn px-2.5 py-1.5 rounded-lg text-xs font-mono font-bold bg-cyan-400 text-slate-950 transition-all" data-target="hogares">Hogares</button>
-            <button onclick="showAgentDetail('tenderos')" class="tab-btn px-2.5 py-1.5 rounded-lg text-xs font-mono font-medium bg-slate-900 text-slate-300 hover:text-white transition-all" data-target="tenderos">Tenderos</button>
-            <button onclick="showAgentDetail('gestores')" class="tab-btn px-2.5 py-1.5 rounded-lg text-xs font-mono font-medium bg-slate-900 text-slate-300 hover:text-white transition-all" data-target="gestores">Gestores Huerta</button>
-            <button onclick="showAgentDetail('micelio')" class="tab-btn px-2.5 py-1.5 rounded-lg text-xs font-mono font-medium bg-slate-900 text-slate-300 hover:text-white transition-all" data-target="micelio">Micelio vs Moho</button>
-            <button onclick="showAgentDetail('entorno')" class="tab-btn px-2.5 py-1.5 rounded-lg text-xs font-mono font-medium bg-slate-900 text-slate-300 hover:text-white transition-all" data-target="entorno">Morfología 3D</button>
+            <button onclick="showAgentDetail('hogares')" class="tab-btn px-3 py-1 rounded-full text-xs font-mono font-semibold transition-all bg-ink text-white" data-target="hogares">Hogares</button>
+            <button onclick="showAgentDetail('tenderos')" class="tab-btn px-3 py-1 rounded-full text-xs font-mono font-medium transition-all bg-paper-subtle text-ink-muted hover:text-ink" data-target="tenderos">Tenderos</button>
+            <button onclick="showAgentDetail('gestores')" class="tab-btn px-3 py-1 rounded-full text-xs font-mono font-medium transition-all bg-paper-subtle text-ink-muted hover:text-ink" data-target="gestores">Gestores de Huerta</button>
+            <button onclick="showAgentDetail('micelio')" class="tab-btn px-3 py-1 rounded-full text-xs font-mono font-medium transition-all bg-paper-subtle text-ink-muted hover:text-ink" data-target="micelio">Micelio vs Moho</button>
+            <button onclick="showAgentDetail('entorno')" class="tab-btn px-3 py-1 rounded-full text-xs font-mono font-medium transition-all bg-paper-subtle text-ink-muted hover:text-ink" data-target="entorno">Morfología 3D</button>
           </div>
         </div>
 
-        <div id="agentDetailContainer" class="p-4 rounded-xl bg-slate-950/80 border border-slate-800">
-          <!-- Dinámico -->
+        <div id="agentDetailContainer" class="pt-5">
+          <!-- Contenido dinámico -->
         </div>
-      </section>
+      </div>
 
-      <!-- CITA D1 -->
-      <section class="rounded-2xl p-6 bg-slate-900/90 border border-cyan-500/30 text-center">
-        <blockquote class="text-base sm:text-xl font-serif italic text-white max-w-4xl mx-auto">
+      <!-- CITA DESTACADA EPSTEIN D1 -->
+      <div class="bg-palette-sand/40 border border-[#dfd4ba] rounded-2xl p-6 text-center">
+        <blockquote class="text-xl sm:text-2xl font-serif italic text-ink max-w-4xl mx-auto leading-relaxed">
           “La elección no es si construir modelos o no; la elección es si construir modelos explícitos donde los supuestos se expongan con claridad para que otros puedan evaluarlos y replicarlos.”
         </blockquote>
-        <div class="mt-2 text-xs font-mono text-cyan-300 font-bold">— Joshua M. Epstein (2008)</div>
-      </section>
+        <div class="mt-3 text-xs font-mono uppercase tracking-widest text-palette-sandDark font-bold">
+          Joshua M. Epstein (2008) &bull; Why Model?
+        </div>
+      </div>
 
-    </div>
+    </section>
 
-    <!-- ================================================================= -->
-    <!-- CONTENIDO DIAPOSITIVA 2                                           -->
-    <!-- ================================================================= -->
-    <div id="slide2View" class="space-y-10 hidden">
+
+    <!-- ============================================================== -->
+    <!-- SECCIÓN DIAPOSITIVA 2                                          -->
+    <!-- ============================================================== -->
+    <section id="sectionD2" class="space-y-8 pt-6">
       
-      <!-- HERO SECTION D2 -->
-      <section class="text-center md:text-left relative py-4">
-        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-amber-500/10 text-amber-400 border border-amber-500/20 mb-3">
-          <i data-lucide="git-commit" class="w-3.5 h-3.5"></i>
-          Diapositiva 2 · Dinámica de Sistemas y Diseño Arquitectónico
+      <!-- SUBTÍTULO D2 -->
+      <div class="flex items-center justify-between border-b border-ink-border pb-3">
+        <div class="flex items-center space-x-3">
+          <span class="w-6 h-6 rounded-full bg-palette-sand text-palette-sandDark flex items-center justify-center font-mono text-xs font-bold">2</span>
+          <h2 class="text-2xl font-serif font-bold text-ink">Descubrir bucles de colapso y disciplinar la política pública</h2>
         </div>
-        <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold font-display tracking-tight text-white max-w-5xl">
-          Descubrir bucles de colapso y <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 via-rose-400 to-cyan-300">disciplinar la política pública</span>
-        </h1>
-        <p class="mt-2 text-lg sm:text-xl text-slate-300 font-display font-medium max-w-4xl">
-          Las razones para simular: Sensibilidad, límites compensadores e "ignorancia militante"
-        </p>
-        <div class="mt-3 flex items-center justify-start gap-2 text-sm text-amber-300/90 font-mono">
-          <i data-lucide="shield-alert" class="w-4 h-4 text-amber-400 flex-shrink-0"></i>
-          <span>Identificación de los 4 frenos de colapso barrial y las respuestas espaciales del proyecto</span>
-        </div>
-      </section>
+        <span class="text-xs font-mono text-ink-faded">Sensibilidad, límites compensadores e "ignorancia militante"</span>
+      </div>
 
-      <!-- CUADRANTE DE LOS 4 BUCLES VS ARQUITECTURA -->
-      <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+      <!-- CUADRANTE DE LOS 4 BUCLES DE FALLA (B1 A B4) CON SU RESPUESTA ESPACIAL -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
         
         <!-- BUCLE B1 -->
-        <div class="glass-card-danger rounded-2xl p-5 border-rose-500/30 flex flex-col justify-between hover:border-rose-400 transition-all">
+        <div class="bg-white border border-ink-border rounded-2xl p-5 flex flex-col justify-between hover:border-palette-blushDark transition-all">
           <div>
-            <div class="flex items-center justify-between pb-3 border-b border-rose-500/20 mb-3">
-              <span class="text-xs font-mono font-bold text-rose-400">BUCLE B1</span>
-              <span class="px-2 py-0.5 rounded text-[10px] font-mono bg-rose-950 text-rose-300">DESGASTE HUMANO</span>
+            <div class="flex items-center justify-between pb-2.5 border-b border-ink-border mb-3">
+              <span class="text-xs font-mono font-bold text-palette-blushDark">BUCLE B1</span>
+              <span class="px-2 py-0.5 rounded text-[10px] font-mono bg-palette-blush text-palette-blushDark font-bold">DESGASTE</span>
             </div>
-            <h4 class="font-bold text-white text-base font-display">Burnout Comunitario</h4>
-            <p class="text-xs text-slate-300 mt-2 leading-relaxed">
-              Las huertas suelen depender de 2 o 3 lideresas. Sin protocolo de rotación, la fatiga acumulada provoca el abandono total hacia el <strong>mes 5</strong>.
+            <h4 class="text-lg font-serif font-bold text-ink">Burnout Comunitario</h4>
+            <p class="text-xs text-ink-muted mt-2 leading-relaxed">
+              Las huertas suelen depender de 2 o 3 lideresas sin relevo. A los <strong>5 meses</strong> sobreviene el agotamiento físico y la huerta es abandonada.
             </p>
           </div>
-          <div class="mt-4 pt-3 border-t border-rose-500/20 bg-slate-950/70 p-3 rounded-xl border border-slate-800">
-            <div class="text-[10px] font-mono text-emerald-400 font-bold uppercase">Solución Institucional:</div>
-            <p class="text-xs text-white font-medium mt-0.5">Rotación de roles cada 4 meses (Reglas de Ostrom).</p>
+          <div class="mt-4 pt-3 border-t border-ink-border bg-palette-subtle p-3 rounded-xl">
+            <span class="text-[10px] font-mono text-palette-sageDark font-bold uppercase tracking-wider block">Respuesta de Diseño:</span>
+            <p class="text-xs text-ink font-medium mt-0.5">Rotación de roles cada 4 meses (Gobernanza de Elinor Ostrom).</p>
           </div>
         </div>
 
         <!-- BUCLE B2 -->
-        <div class="glass-card-danger rounded-2xl p-5 border-amber-500/30 flex flex-col justify-between hover:border-amber-400 transition-all">
+        <div class="bg-white border border-ink-border rounded-2xl p-5 flex flex-col justify-between hover:border-palette-sandDark transition-all">
           <div>
-            <div class="flex items-center justify-between pb-3 border-b border-amber-500/20 mb-3">
-              <span class="text-xs font-mono font-bold text-amber-400">BUCLE B2</span>
-              <span class="px-2 py-0.5 rounded text-[10px] font-mono bg-amber-950 text-amber-300">REACCIÓN MAYORISTA</span>
+            <div class="flex items-center justify-between pb-2.5 border-b border-ink-border mb-3">
+              <span class="text-xs font-mono font-bold text-palette-sandDark">BUCLE B2</span>
+              <span class="px-2 py-0.5 rounded text-[10px] font-mono bg-palette-sand text-palette-sandDark font-bold">PRESIÓN MAYORISTA</span>
             </div>
-            <h4 class="font-bold text-white text-base font-display">Dumping de Corabastos</h4>
-            <p class="text-xs text-slate-300 mt-2 leading-relaxed">
-              El gigante mayorista reacciona con caídas temporales de precio, quebrando a los tenderos barriales que compran producción ecológica local.
+            <h4 class="text-lg font-serif font-bold text-ink">Dumping de Corabastos</h4>
+            <p class="text-xs text-ink-muted mt-2 leading-relaxed">
+              El gran centro de abastos inunda el barrio con producto a bajo precio temporal, ahogando a las tiendas que se arriesgan a comprar local.
             </p>
           </div>
-          <div class="mt-4 pt-3 border-t border-amber-500/20 bg-slate-950/70 p-3 rounded-xl border border-slate-800">
-            <div class="text-[10px] font-mono text-emerald-400 font-bold uppercase">Solución Arquitectónica:</div>
-            <p class="text-xs text-white font-medium mt-0.5">La Bio-Central de Kennedy + Compras fijas (Ley 2046).</p>
+          <div class="mt-4 pt-3 border-t border-ink-border bg-palette-subtle p-3 rounded-xl">
+            <span class="text-[10px] font-mono text-palette-sageDark font-bold uppercase tracking-wider block">Respuesta Espacial:</span>
+            <p class="text-xs text-ink font-medium mt-0.5">La Bio-Central de Kennedy + Compras fijas garantizadas (Ley 2046).</p>
           </div>
         </div>
 
         <!-- BUCLE B3 -->
-        <div class="glass-card-danger rounded-2xl p-5 border-cyan-500/30 flex flex-col justify-between hover:border-cyan-400 transition-all">
+        <div class="bg-white border border-ink-border rounded-2xl p-5 flex flex-col justify-between hover:border-palette-skyDark transition-all">
           <div>
-            <div class="flex items-center justify-between pb-3 border-b border-cyan-500/20 mb-3">
-              <span class="text-xs font-mono font-bold text-cyan-400">BUCLE B3</span>
-              <span class="px-2 py-0.5 rounded text-[10px] font-mono bg-cyan-950 text-cyan-300">LÍMITE ECOLÓGICO</span>
+            <div class="flex items-center justify-between pb-2.5 border-b border-ink-border mb-3">
+              <span class="text-xs font-mono font-bold text-palette-skyDark">BUCLE B3</span>
+              <span class="px-2 py-0.5 rounded text-[10px] font-mono bg-palette-sky text-palette-skyDark font-bold">LÍMITE ECOLÓGICO</span>
             </div>
-            <h4 class="font-bold text-white text-base font-display">Infracción POT (Dec. 555)</h4>
-            <p class="text-xs text-slate-300 mt-2 leading-relaxed">
-              La invasión informal de la ronda de protección del Humedal El Burro desata sanciones de la CAR y clausura legal de las parcelas.
+            <h4 class="text-lg font-serif font-bold text-ink">Infracción POT (Dec. 555)</h4>
+            <p class="text-xs text-ink-muted mt-2 leading-relaxed">
+              La invasión informal de la ronda hídrica del Humedal El Burro activa sanciones de la autoridad ambiental y la clausura forzada.
             </p>
           </div>
-          <div class="mt-4 pt-3 border-t border-cyan-500/20 bg-slate-950/70 p-3 rounded-xl border border-slate-800">
-            <div class="text-[10px] font-mono text-emerald-400 font-bold uppercase">Solución Urbanística:</div>
-            <p class="text-xs text-white font-medium mt-0.5">Zonificación de amortiguación y retranqueo estricto.</p>
+          <div class="mt-4 pt-3 border-t border-ink-border bg-palette-subtle p-3 rounded-xl">
+            <span class="text-[10px] font-mono text-palette-sageDark font-bold uppercase tracking-wider block">Respuesta Urbanística:</span>
+            <p class="text-xs text-ink font-medium mt-0.5">Zonificación de amortiguación bioclimática y retranqueo estricto.</p>
           </div>
         </div>
 
         <!-- BUCLE B4 -->
-        <div class="glass-card-danger rounded-2xl p-5 border-violet-500/30 flex flex-col justify-between hover:border-violet-400 transition-all">
+        <div class="bg-white border border-ink-border rounded-2xl p-5 flex flex-col justify-between hover:border-palette-lavenderDark transition-all">
           <div>
-            <div class="flex items-center justify-between pb-3 border-b border-violet-500/20 mb-3">
-              <span class="text-xs font-mono font-bold text-violet-400">BUCLE B4</span>
-              <span class="px-2 py-0.5 rounded text-[10px] font-mono bg-violet-950 text-violet-300">SATURACIÓN PERECEDERA</span>
+            <div class="flex items-center justify-between pb-2.5 border-b border-ink-border mb-3">
+              <span class="text-xs font-mono font-bold text-palette-lavenderDark">BUCLE B4</span>
+              <span class="px-2 py-0.5 rounded text-[10px] font-mono bg-palette-lavender text-palette-lavenderDark font-bold">MERMA PERECEDERA</span>
             </div>
-            <h4 class="font-bold text-white text-base font-display">Picos de Cosecha & Merma</h4>
-            <p class="text-xs text-slate-300 mt-2 leading-relaxed">
-              Excedentes no procesados de acelga o setas se descomponen a las 48h, deprimiendo el precio barrial y desanimando a los cultivadores.
+            <h4 class="text-lg font-serif font-bold text-ink">Picos de Cosecha & Ruina</h4>
+            <p class="text-xs text-ink-muted mt-2 leading-relaxed">
+              Cosechas masivas de setas u hortalizas sin procesar se pudren en 48 horas, deprimiendo el precio barrial y frustrando al huertero.
             </p>
           </div>
-          <div class="mt-4 pt-3 border-t border-violet-500/20 bg-slate-950/70 p-3 rounded-xl border border-slate-800">
-            <div class="text-[10px] font-mono text-emerald-400 font-bold uppercase">Dispositivo Bioclimático:</div>
-            <p class="text-xs text-white font-medium mt-0.5">Pérgola de secado solar ("Tendedero") para deshidratado.</p>
+          <div class="mt-4 pt-3 border-t border-ink-border bg-palette-subtle p-3 rounded-xl">
+            <span class="text-[10px] font-mono text-palette-sageDark font-bold uppercase tracking-wider block">Dispositivo Bioclimático:</span>
+            <p class="text-xs text-ink font-medium mt-0.5">Pérgola de secado solar ("El Tendedero") para deshidratado rápido.</p>
           </div>
         </div>
 
-      </section>
+      </div>
 
-      <!-- SIMULADOR DE SENSIBILIDAD EN VIVO (INTERACTIVO) -->
-      <section class="glass-card rounded-2xl p-6 border-slate-800">
-        <div class="flex flex-col sm:flex-row sm:items-center justify-between pb-4 mb-6 border-b border-slate-800 gap-2">
+      <!-- SIMULADOR DE SENSIBILIDAD EN VIVO (ESTILO PLANO DE LABORATORIO) -->
+      <div class="arch-card p-6 rounded-2xl">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between pb-4 border-b border-ink-border gap-2">
           <div>
-            <h2 class="text-base font-bold font-display text-white flex items-center gap-2">
-              <i data-lucide="sliders" class="w-4 h-4 text-amber-400"></i>
-              Simulador de Sensibilidad & Umbrales de Colapso
-            </h2>
-            <p class="text-xs text-slate-400">Prueba los parámetros antes de construir en el territorio real (Epstein Razones 10, 14 y 16)</p>
+            <span class="text-[10px] font-mono uppercase text-ink-faded tracking-widest block">Prueba de Sensibilidad</span>
+            <h3 class="text-xl font-serif font-bold text-ink">Simulador de Resiliencia y Umbrales Críticos</h3>
+            <p class="text-xs text-ink-muted">Modela el comportamiento antes de cometer errores costosos en el territorio (Epstein 10, 14, 16)</p>
           </div>
-          <div id="systemHealthBadge" class="px-3 py-1 rounded-full text-xs font-mono font-bold bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 flex items-center gap-1.5">
-            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-            <span>CIRCUITO ESTABLE</span>
+          <div id="systemHealthBadge" class="px-3.5 py-1.5 rounded-full text-xs font-mono font-bold bg-palette-sage text-palette-sageDark border border-[#c4dac5] flex items-center gap-1.5 self-start sm:self-auto">
+            <span class="w-2 h-2 rounded-full bg-palette-sageDark"></span>
+            <span>EQUILIBRIO RESILIENTE</span>
           </div>
         </div>
 
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 pt-5">
           <!-- Control 1 -->
-          <div class="space-y-2 bg-slate-950/60 p-4 rounded-xl border border-slate-800">
+          <div class="p-4 rounded-xl bg-palette-subtle border border-ink-border space-y-2">
             <div class="flex justify-between text-xs font-mono">
-              <span class="text-slate-300">Rotación de Roles (Meses)</span>
-              <span id="valRotacion" class="text-amber-400 font-bold">4 meses</span>
+              <span class="text-ink">Rotación Comunitaria</span>
+              <span id="valRotacion" class="font-bold text-palette-sandDark">4 meses</span>
             </div>
-            <input type="range" id="inputRotacion" min="2" max="10" value="4" step="1" oninput="updateSim()" class="w-full accent-amber-400 cursor-pointer">
-            <div class="text-[10px] text-slate-400">Freno B1: >5 meses provoca burnout de líderes comunitarios.</div>
+            <input type="range" id="inputRotacion" min="2" max="10" value="4" step="1" oninput="updateSim()" class="w-full accent-[#856a29] cursor-pointer">
+            <p class="text-[11px] text-ink-faded leading-tight">Umbral de burnout: a más de 5 meses las lideresas colapsan.</p>
           </div>
 
           <!-- Control 2 -->
-          <div class="space-y-2 bg-slate-950/60 p-4 rounded-xl border border-slate-800">
+          <div class="p-4 rounded-xl bg-palette-subtle border border-ink-border space-y-2">
             <div class="flex justify-between text-xs font-mono">
-              <span class="text-slate-300">Capacidad Tendedero Solar (%)</span>
-              <span id="valTendedero" class="text-cyan-400 font-bold">75%</span>
+              <span class="text-ink">Capacidad Secado Solar</span>
+              <span id="valTendedero" class="font-bold text-palette-skyDark">75%</span>
             </div>
-            <input type="range" id="inputTendedero" min="0" max="100" value="75" step="5" oninput="updateSim()" class="w-full accent-cyan-400 cursor-pointer">
-            <div class="text-[10px] text-slate-400">Freno B4: <40% pudre cosechas pico y tumba el precio.</div>
+            <input type="range" id="inputTendedero" min="0" max="100" value="75" step="5" oninput="updateSim()" class="w-full accent-[#365a6b] cursor-pointer">
+            <p class="text-[11px] text-ink-faded leading-tight">Menos de 40% pudre la merma y tumba el precio barrial.</p>
           </div>
 
           <!-- Control 3 -->
-          <div class="space-y-2 bg-slate-950/60 p-4 rounded-xl border border-slate-800">
+          <div class="p-4 rounded-xl bg-palette-subtle border border-ink-border space-y-2">
             <div class="flex justify-between text-xs font-mono">
-              <span class="text-slate-300">Compras Fijas Bio-Central (Ley 2046)</span>
-              <span id="valBioCentral" class="text-emerald-400 font-bold">30%</span>
+              <span class="text-ink">Compras Fijas Bio-Central</span>
+              <span id="valBioCentral" class="font-bold text-palette-sageDark">30%</span>
             </div>
-            <input type="range" id="inputBioCentral" min="0" max="60" value="30" step="5" oninput="updateSim()" class="w-full accent-emerald-400 cursor-pointer">
-            <div class="text-[10px] text-slate-400">Freno B2: <15% expone a tiendas a la asfixia de Corabastos.</div>
+            <input type="range" id="inputBioCentral" min="0" max="60" value="30" step="5" oninput="updateSim()" class="w-full accent-[#335c3d] cursor-pointer">
+            <p class="text-[11px] text-ink-faded leading-tight">Menos de 15% deja a las tiendas a merced del dumping de Corabastos.</p>
           </div>
         </div>
 
-        <div id="simFeedbackBox" class="mt-4 p-3.5 rounded-xl bg-slate-900 border border-slate-800 text-xs font-mono flex items-start gap-2.5">
-          <i data-lucide="check-circle" class="w-4 h-4 text-emerald-400 mt-0.5 flex-shrink-0"></i>
-          <span class="text-slate-300" id="simFeedbackText">
-            Parámetros en equilibrio óptimo: La rotación a 4 meses protege a las lideresas, el secado solar procesa el excedente de hongos y La Bio-Central garantiza demanda institucional.
+        <div id="simFeedbackBox" class="mt-5 p-4 rounded-xl bg-white border border-ink-border text-xs font-mono flex items-start gap-3">
+          <i data-lucide="check-circle" class="w-4 h-4 text-palette-sageDark mt-0.5 flex-shrink-0"></i>
+          <span class="text-ink" id="simFeedbackText">
+            <strong>ESTADO ÓPTIMO:</strong> Rotación institucional a tiempo según Ostrom, cosecha protegida por el Tendedero solar y compras fijas en la Bio-Central (Ley 2046) neutralizando las presiones de Corabastos.
           </span>
         </div>
-      </section>
+      </div>
 
-      <!-- 3 COLUMNAS TEÓRICAS D2 -->
-      <section class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <!-- 3 TARJETAS TEÓRICAS D2 -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
         
-        <div class="glass-card rounded-2xl p-6 border-slate-800">
-          <div class="w-9 h-9 rounded-xl bg-amber-500/10 text-amber-400 flex items-center justify-center mb-3">
-            <i data-lucide="compass" class="w-5 h-5"></i>
+        <div class="arch-card p-6 rounded-2xl flex flex-col justify-between">
+          <div>
+            <span class="text-xs font-mono font-bold text-palette-sandDark bg-palette-sand/60 px-2 py-0.5 rounded">R3, R7, R8</span>
+            <h4 class="text-lg font-serif font-bold text-ink mt-3">Iluminar Dinámicas Centrales</h4>
+            <p class="text-xs text-ink-muted mt-2 leading-relaxed">
+              En el discurso político tradicional sembrar siempre "funciona". En la simulación descubrimos por qué los proyectos fracasan silenciosamente tras los discursos inaugurales.
+            </p>
           </div>
-          <h3 class="text-base font-bold font-display text-white">Iluminar Límites Ocultos</h3>
-          <p class="text-xs text-amber-400 font-mono">Razones 3, 7 y 8 de Epstein</p>
-          <p class="text-xs text-slate-300 mt-3 leading-relaxed">
-            Las políticas bienintencionadas fracasan porque ignoran las retroalimentaciones compensadoras. Simular nos obliga a ver los 4 frenos invisibles antes de diseñar.
-          </p>
+          <div class="mt-4 pt-3 border-t border-ink-border text-[11px] font-mono text-ink-faded">
+            Límites ocultos y retroalimentación negativa.
+          </div>
         </div>
 
-        <div class="glass-card rounded-2xl p-6 border-slate-800">
-          <div class="w-9 h-9 rounded-xl bg-cyan-500/10 text-cyan-400 flex items-center justify-center mb-3">
-            <i data-lucide="building-2" class="w-5 h-5"></i>
+        <div class="arch-card p-6 rounded-2xl flex flex-col justify-between">
+          <div>
+            <span class="text-xs font-mono font-bold text-palette-sageDark bg-palette-sage/60 px-2 py-0.5 rounded">R10</span>
+            <h4 class="text-lg font-serif font-bold text-ink mt-3">Compensaciones Espaciales</h4>
+            <p class="text-xs text-ink-muted mt-2 leading-relaxed">
+              La arquitectura y el paisajismo no son adorno: La Bio-Central, las pérgolas de secado y los senderos de amortiguación son piezas cibernéticas indispensables para la resiliencia territorial.
+            </p>
           </div>
-          <h3 class="text-base font-bold font-display text-white">Compensaciones Espaciales</h3>
-          <p class="text-xs text-cyan-400 font-mono">Razón 10 de Epstein</p>
-          <p class="text-xs text-slate-300 mt-3 leading-relaxed">
-            La arquitectura no es forma vacía: La Bio-Central y los Tendederos son dispositivos para estabilizar los flujos económicos y biológicos del territorio popular.
-          </p>
+          <div class="mt-4 pt-3 border-t border-ink-border text-[11px] font-mono text-ink-faded">
+            Dispositivos para blindar el circuito social.
+          </div>
         </div>
 
-        <div class="glass-card rounded-2xl p-6 border-slate-800">
-          <div class="w-9 h-9 rounded-xl bg-rose-500/10 text-rose-400 flex items-center justify-center mb-3">
-            <i data-lucide="flame" class="w-5 h-5"></i>
+        <div class="arch-card p-6 rounded-2xl flex flex-col justify-between">
+          <div>
+            <span class="text-xs font-mono font-bold text-palette-blushDark bg-palette-blush/60 px-2 py-0.5 rounded">R14, R16</span>
+            <h4 class="text-lg font-serif font-bold text-ink mt-3">"Ignorancia Militante"</h4>
+            <p class="text-xs text-ink-muted mt-2 leading-relaxed">
+              El compromiso ético con el "no lo sabemos hasta tener evidencia". No usamos datos inventados de 99% de autosuficiencia; disciplinamos la discusión pública probando errores en pantalla.
+            </p>
           </div>
-          <h3 class="text-base font-bold font-display text-white">"Ignorancia Militante"</h3>
-          <p class="text-xs text-rose-400 font-mono">Razones 14 y 16 de Epstein</p>
-          <p class="text-xs text-slate-300 mt-3 leading-relaxed">
-            Compromiso ético con no inventar cifras triunfalistas. El modelo disciplina la deliberación pública permitiendo probar escenarios fallidos en pantalla.
-          </p>
+          <div class="mt-4 pt-3 border-t border-ink-border text-[11px] font-mono text-ink-faded">
+            Diálogo de opciones sin engaños tecnocráticos.
+          </div>
         </div>
 
-      </section>
+      </div>
 
-      <!-- CITA D2 -->
-      <section class="rounded-2xl p-6 bg-slate-900/90 border border-amber-500/30 text-center">
-        <blockquote class="text-base sm:text-xl font-serif italic text-white max-w-4xl mx-auto">
+      <!-- CITA DESTACADA BOX & EPSTEIN D2 -->
+      <div class="bg-palette-sand/40 border border-[#dfd4ba] rounded-2xl p-6 text-center">
+        <blockquote class="text-xl sm:text-2xl font-serif italic text-ink max-w-4xl mx-auto leading-relaxed">
           “Todos los modelos son aproximaciones. El mérito de un buen modelo no es ser perfecto, sino ser fructíferamente erróneo: iluminar las incertidumbres críticas y disciplinar el diálogo de opciones.”
         </blockquote>
-        <div class="mt-2 text-xs font-mono text-amber-300 font-bold">— Adaptado de Joshua M. Epstein (2008) y George Box</div>
-      </section>
+        <div class="mt-3 text-xs font-mono uppercase tracking-widest text-palette-sandDark font-bold">
+          Adaptado de Joshua M. Epstein (2008) y George Box
+        </div>
+      </div>
 
-    </div>
+    </section>
 
   </main>
 
-  <!-- MODAL / DRAWER TELEPROMPTER PARA SUSTENTACIÓN ORAL -->
-  <div id="teleprompterDrawer" class="fixed inset-y-0 right-0 w-full sm:w-[480px] bg-slate-900 border-l border-amber-500/30 p-6 shadow-2xl z-50 transform translate-x-full transition-transform duration-300 ease-in-out flex flex-col justify-between">
+  <!-- MODAL / DRAWER TELEPROMPTER PARA SUSTENTACIÓN (ESTILO EDITORIAL MINIMAL) -->
+  <div id="teleprompterDrawer" class="fixed inset-y-0 right-0 w-full sm:w-[480px] bg-white border-l border-ink-border p-6 shadow-xl z-50 transform translate-x-full transition-transform duration-300 ease-in-out flex flex-col justify-between">
     <div>
-      <div class="flex items-center justify-between pb-4 border-b border-slate-800">
-        <div class="flex items-center space-x-2">
-          <div class="p-2 rounded-lg bg-amber-500/20 text-amber-300">
-            <i data-lucide="mic" class="w-5 h-5"></i>
-          </div>
-          <div>
-            <h3 class="text-sm font-bold text-white font-display">Notas de Sustentación</h3>
-            <p id="prompterSubtitle" class="text-[11px] font-mono text-amber-400">Diapositiva 1 · Qué decir ante los jurados</p>
-          </div>
+      <div class="flex items-center justify-between pb-4 border-b border-ink-border">
+        <div>
+          <span class="text-[10px] font-mono uppercase text-ink-faded tracking-widest block">Guion del Orador</span>
+          <h3 class="text-lg font-serif font-bold text-ink">Notas de Sustentación</h3>
         </div>
-        <button onclick="toggleTeleprompter()" class="text-slate-400 hover:text-white p-1 rounded-lg hover:bg-slate-800">
+        <button onclick="toggleTeleprompter()" class="text-ink-muted hover:text-ink p-1 rounded-lg">
           <i data-lucide="x" class="w-5 h-5"></i>
         </button>
       </div>
 
-      <!-- TIMER DE PRÁCTICA -->
-      <div class="mt-4 p-3 rounded-xl bg-slate-950 border border-slate-800 flex items-center justify-between">
+      <!-- CRONÓMETRO DE PRÁCTICA -->
+      <div class="mt-4 p-3 rounded-xl bg-palette-subtle border border-ink-border flex items-center justify-between">
         <div class="flex items-center space-x-2">
-          <i data-lucide="timer" class="w-4 h-4 text-amber-400"></i>
-          <span class="text-xs font-mono text-slate-400">Objetivo: 90s - 120s</span>
+          <i data-lucide="clock" class="w-4 h-4 text-ink-muted"></i>
+          <span class="text-xs font-mono text-ink-muted">Objetivo: 90s - 120s</span>
         </div>
-        <div id="timerDisplay" class="font-mono text-sm font-bold text-amber-300">00:00</div>
-        <button id="timerToggleBtn" onclick="toggleTimer()" class="px-2 py-1 text-[11px] font-mono rounded bg-amber-500/20 text-amber-300 hover:bg-amber-500/30">Iniciar</button>
+        <div id="timerDisplay" class="font-mono text-sm font-bold text-ink">00:00</div>
+        <button id="timerToggleBtn" onclick="toggleTimer()" class="px-2.5 py-1 text-xs font-mono font-semibold rounded bg-white border border-ink-border hover:bg-palette-subtle">
+          Iniciar
+        </button>
       </div>
 
       <!-- GUION DIAPOSITIVA 1 -->
-      <div id="prompterTextD1" class="mt-4 space-y-4 text-slate-200 text-sm leading-relaxed overflow-y-auto max-h-[60vh] pr-2">
-        <div class="p-3 rounded-lg bg-amber-500/5 border border-amber-500/20">
-          <p class="font-semibold text-amber-300 text-xs uppercase font-mono tracking-wider mb-1">Apertura y Desarme del Prejuicio:</p>
-          <p>
-            "Profesores: empezamos apoyándonos en <strong class="text-white">Joshua Epstein</strong> para desarmar el primer gran prejuicio sobre nuestro proyecto: <span class="underline decoration-red-500">la idea de que modelamos para 'adivinar el futuro'</span>."
+      <div id="prompterD1" class="mt-5 space-y-4 text-xs sm:text-sm font-sans leading-relaxed text-ink-muted overflow-y-auto max-h-[60vh] pr-2">
+        <div class="p-3.5 rounded-xl bg-palette-blush/40 border border-[#eed0c5]">
+          <span class="text-[10px] font-mono uppercase text-palette-blushDark font-bold tracking-wider block mb-1">Apertura y Desarme del Prejuicio:</span>
+          <p class="text-ink">
+            "Profesores: empezamos apoyándonos en <strong>Joshua Epstein</strong> para desarmar el primer gran prejuicio sobre nuestro proyecto: <span class="bg-palette-blush/80 px-1 py-0.5 rounded">la idea de que modelamos para 'adivinar el futuro'</span>."
           </p>
         </div>
 
-        <div class="p-3 rounded-lg bg-slate-950/80 border border-slate-800">
-          <p class="font-semibold text-cyan-300 text-xs uppercase font-mono tracking-wider mb-1">El Modelo Implícito:</p>
-          <p>
+        <div class="p-3.5 rounded-xl bg-palette-subtle border border-ink-border">
+          <span class="text-[10px] font-mono uppercase text-ink-faded font-bold tracking-wider block mb-1">El Modelo Implícito Oculto:</span>
+          <p class="text-ink">
             "Epstein demuestra que todos ya tenemos un modelo en la cabeza cuando opinamos sobre una política pública, pero suele ser un <em>modelo implícito</em>, donde los prejuicios están escondidos."
           </p>
         </div>
 
-        <div class="p-3 rounded-lg bg-emerald-500/5 border border-emerald-500/20">
-          <p class="font-semibold text-emerald-300 text-xs uppercase font-mono tracking-wider mb-1">El Salto a Kennedy 3D:</p>
-          <p>
+        <div class="p-3.5 rounded-xl bg-palette-sage/40 border border-[#c4dac5]">
+          <span class="text-[10px] font-mono uppercase text-palette-sageDark font-bold tracking-wider block mb-1">El Salto al Modelo Explícito:</span>
+          <p class="text-ink">
             "Al modelar Kennedy en un sistema multiagente sobre nuestra base 3D, obligamos al proyecto a ser explícito: 
             <strong>¿a qué precio compra el tendero de Patio Bonito?</strong>, 
             <strong>¿cuántas horas de sol necesita el 'tendedero'?</strong>, 
@@ -601,26 +623,26 @@
           </p>
         </div>
 
-        <div class="p-3 rounded-lg bg-cyan-500/5 border border-cyan-500/20">
-          <p class="font-semibold text-cyan-300 text-xs uppercase font-mono tracking-wider mb-1">Cierre Epistémico:</p>
-          <p>
+        <div class="p-3.5 rounded-xl bg-palette-sand/40 border border-[#dfd4ba]">
+          <span class="text-[10px] font-mono uppercase text-palette-sandDark font-bold tracking-wider block mb-1">Cierre Epistémico:</span>
+          <p class="text-ink">
             "No buscamos una predicción milagrosa, sino una <strong>explicación generativa</strong> de cómo la autonomía alimentaria puede emerger desde abajo."
           </p>
         </div>
       </div>
 
       <!-- GUION DIAPOSITIVA 2 -->
-      <div id="prompterTextD2" class="mt-4 space-y-4 text-slate-200 text-sm leading-relaxed overflow-y-auto max-h-[60vh] pr-2 hidden">
-        <div class="p-3 rounded-lg bg-amber-500/5 border border-amber-500/20">
-          <p class="font-semibold text-amber-300 text-xs uppercase font-mono tracking-wider mb-1">Apertura y Crítica a la Infraestructura Vacía:</p>
-          <p>
+      <div id="prompterD2" class="mt-5 space-y-4 text-xs sm:text-sm font-sans leading-relaxed text-ink-muted overflow-y-auto max-h-[60vh] pr-2 hidden">
+        <div class="p-3.5 rounded-xl bg-palette-sand/40 border border-[#dfd4ba]">
+          <span class="text-[10px] font-mono uppercase text-palette-sandDark font-bold tracking-wider block mb-1">Apertura y Crítica a la Infraestructura Vacía:</span>
+          <p class="text-ink">
             "En esta segunda diapositiva demostramos por qué el simulador es indispensable antes de construir un solo metro cuadrado. En los proyectos sociales de Bogotá se comete el error de construir infraestructura a ciegas que luego queda vacía."
           </p>
         </div>
 
-        <div class="p-3 rounded-lg bg-rose-500/5 border border-rose-500/20">
-          <p class="font-semibold text-rose-300 text-xs uppercase font-mono tracking-wider mb-1">Los 4 Frenos de Colapso:</p>
-          <p>
+        <div class="p-3.5 rounded-xl bg-palette-blush/40 border border-[#eed0c5]">
+          <span class="text-[10px] font-mono uppercase text-palette-blushDark font-bold tracking-wider block mb-1">Los 4 Frenos de Colapso Sistémico:</span>
+          <p class="text-ink">
             "Con nuestro modelo identificamos con claridad cuatro frenos de colapso: 
             <strong>el agotamiento del voluntariado (B1)</strong>, 
             <strong>la reacción comercial de Corabastos (B2)</strong>, 
@@ -629,9 +651,9 @@
           </p>
         </div>
 
-        <div class="p-3 rounded-lg bg-emerald-500/5 border border-emerald-500/20">
-          <p class="font-semibold text-emerald-300 text-xs uppercase font-mono tracking-wider mb-1">La Respuesta Arquitectónica:</p>
-          <p>
+        <div class="p-3.5 rounded-xl bg-palette-sage/40 border border-[#c4dac5]">
+          <span class="text-[10px] font-mono uppercase text-palette-sageDark font-bold tracking-wider block mb-1">La Respuesta Arquitectónica y Bioclimática:</span>
+          <p class="text-ink">
             "El simulador nos permite hacer análisis de sensibilidad y demostrar que equipamientos como <strong>La Bio-Central</strong> y las <strong>estaciones de deshidratado</strong> no son caprichos formales, sino dispositivos espaciales indispensables para que el sistema barrial no colapse."
           </p>
         </div>
@@ -639,81 +661,86 @@
 
     </div>
 
-    <div class="pt-4 border-t border-slate-800 text-[11px] font-mono text-slate-400 flex items-center justify-between">
-      <span>Kennedy 2030 · Diapositiva Activa</span>
-      <button onclick="toggleTeleprompter()" class="text-amber-400 hover:underline">Cerrar Guion</button>
+    <div class="pt-4 border-t border-ink-border text-[11px] font-mono text-ink-faded flex items-center justify-between">
+      <span>Kennedy 2030 &bull; Folio de Exposición</span>
+      <button onclick="toggleTeleprompter()" class="text-ink font-semibold hover:underline">Cerrar</button>
     </div>
   </div>
 
-  <!-- SCRIPT INTERACTIVO -->
+
+  <!-- JAVASCRIPT DINÁMICO -->
   <script>
-    // Inicializar iconos de Lucide
     lucide.createIcons();
 
-    let currentSlide = 1;
+    // Estado de pestañas / vista
+    function switchSlide(target) {
+      const sec1 = document.getElementById('sectionD1');
+      const sec2 = document.getElementById('sectionD2');
+      const b1 = document.getElementById('btnTab1');
+      const b2 = document.getElementById('btnTab2');
+      const bAll = document.getElementById('btnTabAll');
+      const p1 = document.getElementById('prompterD1');
+      const p2 = document.getElementById('prompterD2');
 
-    function switchSlide(slideNum) {
-      currentSlide = slideNum;
-      const s1 = document.getElementById('slide1View');
-      const s2 = document.getElementById('slide2View');
-      const b1 = document.getElementById('btnSlide1');
-      const b2 = document.getElementById('btnSlide2');
-      const p1 = document.getElementById('prompterTextD1');
-      const p2 = document.getElementById('prompterTextD2');
-      const pSub = document.getElementById('prompterSubtitle');
+      // Reseteo de estilos de botones
+      [b1, b2, bAll].forEach(b => {
+        if (b) b.className = "px-3 py-1 rounded text-xs font-sans font-semibold tracking-wide transition-all text-ink-muted hover:text-ink";
+      });
 
-      if (slideNum === 1) {
-        s1.classList.remove('hidden');
-        s2.classList.add('hidden');
-        b1.className = "flex items-center space-x-2 px-3 py-1.5 rounded-lg text-xs font-mono font-bold transition-all bg-cyan-500 text-slate-950 shadow-md";
-        b2.className = "flex items-center space-x-2 px-3 py-1.5 rounded-lg text-xs font-mono font-bold transition-all bg-slate-900 text-slate-300 hover:text-white border border-slate-800";
+      if (target === 1) {
+        sec1.classList.remove('hidden');
+        sec2.classList.add('hidden');
+        b1.className = "px-3 py-1 rounded text-xs font-sans font-semibold tracking-wide transition-all bg-white text-ink shadow-sm";
         p1.classList.remove('hidden');
         p2.classList.add('hidden');
-        pSub.textContent = "Diapositiva 1 · Qué decir ante los jurados";
-      } else {
-        s1.classList.add('hidden');
-        s2.classList.remove('hidden');
-        b2.className = "flex items-center space-x-2 px-3 py-1.5 rounded-lg text-xs font-mono font-bold transition-all bg-amber-400 text-slate-950 shadow-md";
-        b1.className = "flex items-center space-x-2 px-3 py-1.5 rounded-lg text-xs font-mono font-bold transition-all bg-slate-900 text-slate-300 hover:text-white border border-slate-800";
-        p2.classList.remove('hidden');
+      } else if (target === 2) {
+        sec1.classList.add('hidden');
+        sec2.classList.remove('hidden');
+        b2.className = "px-3 py-1 rounded text-xs font-sans font-semibold tracking-wide transition-all bg-white text-ink shadow-sm";
         p1.classList.add('hidden');
-        pSub.textContent = "Diapositiva 2 · Qué decir ante los jurados";
+        p2.classList.remove('hidden');
+      } else {
+        sec1.classList.remove('hidden');
+        sec2.classList.remove('hidden');
+        bAll.className = "px-3 py-1 rounded text-xs font-sans font-semibold tracking-wide transition-all bg-white text-ink shadow-sm";
+        p1.classList.remove('hidden');
+        p2.classList.remove('hidden');
       }
       lucide.createIcons();
     }
 
-    // Datos del explorador de agentes (Diapositiva 1)
+    // Datos del explorador de agentes
     const agentDetails = {
       hogares: {
-        title: "Agente: Hogares de Kennedy (María Paz & Patio Bonito)",
+        title: "Agente Hogar: Familias de María Paz y Patio Bonito",
         type: "Agente Humano Heterogéneo",
-        badge: "Consumo & Cultura",
+        badge: "Cultura & Consumo",
         variables: [
-          { name: "Aversión cultural a hongos", val: "Distribución estocástica β(2,5)", desc: "Sensibilidad al olor, textura y mito de toxicidad." },
-          { name: "Elasticidad de gasto alimentario", val: "0.85 (baja flexibilidad)", desc: "Presupuesto diario dependiente de ingreso informal." },
-          { name: "Acceso a crédito barrial", val: "Dependiente de confianza", desc: "Capacidad de acceder a 'fiado' en la tienda local." }
+          { name: "Aversión a hongos comestibles", val: "β(2,5) estocástica", desc: "Percepción de rareza culinaria y mito de toxicidad." },
+          { name: "Elasticidad presupuestaria", val: "0.85 (baja flexibilidad)", desc: "Dependencia de ingresos informales diarios." },
+          { name: "Acceso a crédito barrial", val: "Relacional / Confianza", desc: "Cupo de 'fiado' en la tienda de la esquina." }
         ],
         codeSnippet: "if (precioHongo <= precioProteinaTradicional * 0.8 && aversion < umbralAdopcion) {\n  hogar.adoptarAlimento('seta_ostra');\n}"
       },
       tenderos: {
-        title: "Agente: Tenderos de Barrio",
+        title: "Agente Tendero: Pequeño Comercio de Proximidad",
         type: "Agente Humano Intermediario",
         badge: "Economía Popular",
         variables: [
-          { name: "Margen de ganancia exigido", val: "18% a 25%", desc: "Competencia agresiva frente a mayoristas de Corabastos." },
-          { name: "Límite de fiado comunitario", val: "$150.000 COP / hogar", desc: "Colchón de liquidez informal que sostiene el tejido barrial." },
-          { name: "Espacio de mostrador para perecederos", val: "0.4 m² útiles", desc: "Prioriza productos de alta rotación (plátano, papa, huevos)." }
+          { name: "Margen comercial necesario", val: "18% a 25%", desc: "Competencia directa contra los precios de Corabastos." },
+          { name: "Colchón de fiado barrial", val: "$150.000 COP / familia", desc: "Mecanismo clave de contención social ante desempleo." },
+          { name: "Espacio de mostrador", val: "0.4 m² útiles", desc: "Prioriza productos de rotación rápida (papa, plátano)." }
         ],
         codeSnippet: "if (rotacionHongo > umbralMinimoSemanal && merma < 0.05) {\n  tendero.renovarInventario('huerta_local');\n}"
       },
       gestores: {
-        title: "Agente: Gestores de Huertas Urbanas",
-        type: "Agente Humano de Producción",
+        title: "Agente Gestor: Huerteros Comunitarios y JAC",
+        type: "Agente Humano Productor",
         badge: "Autonomía Agroecológica",
         variables: [
-          { name: "Curva de energía finita", val: "12 a 18 hrs/semana", desc: "Trabajo voluntario sujeto a fatiga y compromisos laborales." },
-          { name: "Tasa de relevo generacional", val: "Baja (0.15 anual)", desc: "Riesgo de abandono por sobrecarga de líderes históricos." },
-          { name: "Disponibilidad hídrica y sustratos", val: "Recolección pluvial + broza", desc: "Vulnerable a sequías y escasez de residuos orgánicos." }
+          { name: "Energía finita semanal", val: "12 a 18 hrs/semana", desc: "Trabajo voluntario sujeto a desgaste y obligaciones." },
+          { name: "Tasa de relevo generacional", val: "Baja (0.15 anual)", desc: "Riesgo de abandono por burnout de líderes históricos." },
+          { name: "Acceso a agua y sustratos", val: "Pluvial + residuos orgánicos", desc: "Sensible a temporadas secas y disponibilidad de broza." }
         ],
         codeSnippet: "if (energiaDisponible <= 0) {\n  huerta.estado = 'latencia_temporal';\n} else {\n  gestor.cuidarCamas('acelga', 'micelio');\n}"
       },
@@ -722,20 +749,20 @@
         type: "Agente Biológico Autónomo",
         badge: "Biotecnología Descentralizada",
         variables: [
-          { name: "Tasa de colonización del micelio", val: "0.8 cm / día a 22°C", desc: "Requiere oscuridad y humedad relativa > 80%." },
-          { name: "Carga de esporas de moho competidor", val: "Vector de aire y manipulación", desc: "Infecta el sustrato si la pasteurización popular falla." },
-          { name: "Conversión de residuo de café/cartón", val: "Ratio 1:1.2", desc: "Generación de biomasa comestible de alto valor proteico." }
+          { name: "Tasa colonización del micelio", val: "0.8 cm / día a 22°C", desc: "Requiere sombra, carbono y humedad relativa > 80%." },
+          { name: "Esporas de moho competidor", val: "Vector de aire / manipulación", desc: "Infecta bolsas si la pasteurización popular falla." },
+          { name: "Conversión de bagazo/cartón", val: "Ratio biomasa 1:1.2", desc: "Produce proteína limpia a partir de desecho urbano." }
         ],
-        codeSnippet: "if (humedadRelativa > 0.85 && temperatura > 18 && temperatura < 25) {\n  micelio.colonizar(bolsaSustrato);\n} else if (esterilizacion == false) {\n  moho.infectar(bolsaSustrato);\n}"
+        codeSnippet: "if (humedadRelativa > 0.85 && temp >= 18 && temp <= 25) {\n  micelio.colonizar(sustrato);\n} else if (!pasteurizado) {\n  moho.infectar(sustrato);\n}"
       },
       entorno: {
-        title: "Entorno 3D: Morfología y Clima de Kennedy",
-        type: "Soporte Espacial Tridimensional",
-        badge: "SIG & Topografía 3D",
+        title: "Entorno 3D: Topografía, Callejones y Humedal El Burro",
+        type: "Soporte Espacial Morfológico",
+        badge: "SIG & Clima Urbano",
         variables: [
-          { name: "Microclima Humedal El Burro", val: "Amortiguación térmica +2°C", desc: "Regula humedad favorable al cultivo fúngico." },
-          { name: "Eje de radiación solar en callejones", val: "Sombra 65% en patios", desc: "Condición ideal para módulos de hongos protegidos del sol directo." },
-          { name: "Gradiente de presión de Corabastos", val: "Inercia de precios a < 1.2 km", desc: "El centro mayorista inunda el barrio con producto barato convencional." }
+          { name: "Amortiguación Humedal", val: "+2°C y humedad nocturna", desc: "Crea microclima propicio para setas en el borde barrial." },
+          { name: "Sombra en pasajes estrechos", val: "65% en patios interiores", desc: "Protección natural frente a la radiación solar directa." },
+          { name: "Gravedad de Corabastos", val: "Radio de presión < 1.2 km", desc: "Flujo masivo de mercancía convencional foránea." }
         ],
         codeSnippet: "cell.humedad = calcularInfluenciaHumedal(distanciaElBurro);\ncell.irradiancia = calcularSombraManzana(morfologia3D, hora);"
       }
@@ -747,19 +774,19 @@
       
       document.querySelectorAll('.tab-btn').forEach(btn => {
         if (btn.getAttribute('data-target') === key) {
-          btn.className = "tab-btn px-2.5 py-1.5 rounded-lg text-xs font-mono font-bold bg-cyan-400 text-slate-950 transition-all shadow-md";
+          btn.className = "tab-btn px-3 py-1 rounded-full text-xs font-mono font-semibold transition-all bg-ink text-white shadow-sm";
         } else {
-          btn.className = "tab-btn px-2.5 py-1.5 rounded-lg text-xs font-mono font-medium bg-slate-900 text-slate-300 hover:text-white transition-all";
+          btn.className = "tab-btn px-3 py-1 rounded-full text-xs font-mono font-medium transition-all bg-paper-subtle text-ink-muted hover:text-ink";
         }
       });
 
       let variablesHTML = data.variables.map(v => `
-        <div class="p-2.5 rounded-lg bg-slate-900/90 border border-slate-800">
+        <div class="p-3 rounded-xl bg-palette-subtle border border-ink-border">
           <div class="flex items-center justify-between text-xs">
-            <span class="font-bold text-white font-mono">${v.name}</span>
-            <span class="text-cyan-400 font-mono text-[11px] font-semibold">${v.val}</span>
+            <span class="font-bold font-mono text-ink">${v.name}</span>
+            <span class="text-[11px] font-mono text-palette-sageDark font-semibold">${v.val}</span>
           </div>
-          <p class="text-[11px] text-slate-400 mt-1">${v.desc}</p>
+          <p class="text-[11px] text-ink-muted mt-1 leading-snug">${v.desc}</p>
         </div>
       `).join('');
 
@@ -768,25 +795,22 @@
           <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
             <div>
               <div class="flex items-center gap-2">
-                <span class="text-xs font-mono text-cyan-400 font-semibold uppercase">${data.type}</span>
-                <span class="text-slate-600">·</span>
-                <span class="text-xs font-mono text-slate-400">${data.badge}</span>
+                <span class="text-[10px] font-mono uppercase text-palette-sandDark font-bold tracking-wider">${data.type}</span>
+                <span class="text-ink-border">•</span>
+                <span class="text-[10px] font-mono text-ink-faded">${data.badge}</span>
               </div>
-              <h3 class="text-base font-bold font-display text-white mt-0.5">${data.title}</h3>
+              <h4 class="text-lg font-serif font-bold text-ink mt-0.5">${data.title}</h4>
             </div>
-            <span class="text-[11px] font-mono text-emerald-400 bg-emerald-950/60 border border-emerald-800/80 px-2 py-1 rounded">Regla Explícita Activa</span>
+            <span class="text-[10px] font-mono text-palette-sageDark bg-palette-sage px-2.5 py-1 rounded-full font-bold self-start">Regla Activa en Código</span>
           </div>
 
           <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
             ${variablesHTML}
           </div>
 
-          <div>
-            <div class="text-[11px] font-mono text-slate-400 mb-1 flex items-center gap-1.5">
-              <i data-lucide="code-2" class="w-3.5 h-3.5 text-cyan-400"></i>
-              Pseudo-código del Comportamiento Local:
-            </div>
-            <pre class="bg-slate-900 text-cyan-300 p-3 rounded-lg font-mono text-xs overflow-x-auto border border-slate-800"><code>${data.codeSnippet}</code></pre>
+          <div class="p-3 bg-paper-subtle rounded-xl border border-ink-border">
+            <span class="text-[10px] font-mono text-ink-faded block mb-1">Pseudo-algoritmo de Interacción Local:</span>
+            <pre class="text-xs font-mono text-ink bg-white p-3 rounded border border-ink-border overflow-x-auto"><code>${data.codeSnippet}</code></pre>
           </div>
         </div>
       `;
@@ -794,7 +818,7 @@
       lucide.createIcons();
     }
 
-    // SIMULADOR DE SENSIBILIDAD (Diapositiva 2)
+    // SIMULADOR DE RESILIENCIA Y SENSIBILIDAD (D2)
     function updateSim() {
       const rot = parseInt(document.getElementById('inputRotacion').value);
       const ten = parseInt(document.getElementById('inputTendedero').value);
@@ -811,35 +835,34 @@
       let failures = [];
 
       if (rot > 5) {
-        failures.push("🔴 B1 ACTIVADO: Burnout severo de lideresas a partir del mes 5.");
+        failures.push("• B1 ACTIVO: Burnout severo de lideresas comunitarias al mes " + rot + ".");
       }
       if (bio < 15) {
-        failures.push("🔴 B2 ACTIVADO: Dumping agresivo de Corabastos quiebra tiendas aliadas.");
+        failures.push("• B2 ACTIVO: Dumping mayorista asfixia tiendas (compras públicas insuficientes: " + bio + "%).");
       }
       if (ten < 40) {
-        failures.push("🔴 B4 ACTIVADO: Descomposición de cosechas pico sin deshidratar.");
+        failures.push("• B4 ACTIVO: Capacidad solar (" + ten + "%) insuficiente; cosechas pico se pudren en 48h.");
       }
 
       if (failures.length === 0) {
-        badge.className = "px-3 py-1 rounded-full text-xs font-mono font-bold bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 flex items-center gap-1.5";
-        badge.innerHTML = '<span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span><span>CIRCUITO ESTABLE</span>';
-        fbBox.className = "mt-4 p-3.5 rounded-xl bg-slate-900 border border-emerald-500/30 text-xs font-mono flex items-start gap-2.5";
-        fbText.innerHTML = '<strong class="text-emerald-400">EQUILIBRIO RESILIENTE:</strong> Rotación comunitaria a tiempo, excedente salvado en seco por el Tendedero y Bio-Central asegurando la demanda fija institucional (Ley 2046).';
+        badge.className = "px-3.5 py-1.5 rounded-full text-xs font-mono font-bold bg-palette-sage text-palette-sageDark border border-[#c4dac5] flex items-center gap-1.5";
+        badge.innerHTML = '<span class="w-2 h-2 rounded-full bg-palette-sageDark"></span><span>EQUILIBRIO RESILIENTE</span>';
+        fbBox.className = "mt-5 p-4 rounded-xl bg-white border border-[#c4dac5] text-xs font-mono flex items-start gap-3";
+        fbText.innerHTML = '<strong class="text-palette-sageDark">EQUILIBRIO CONFIRMADO:</strong> Rotación comunitaria a tiempo según Ostrom, cosecha protegida por el Tendedero solar y compras fijas en la Bio-Central (Ley 2046) neutralizando las presiones de Corabastos.';
       } else {
-        badge.className = "px-3 py-1 rounded-full text-xs font-mono font-bold bg-rose-500/20 text-rose-300 border border-rose-500/30 flex items-center gap-1.5";
-        badge.innerHTML = '<span class="w-2 h-2 rounded-full bg-rose-400 animate-ping"></span><span>RIESGO DE COLAPSO</span>';
-        fbBox.className = "mt-4 p-3.5 rounded-xl bg-rose-950/40 border border-rose-500/40 text-xs font-mono flex items-start gap-2.5";
-        fbText.innerHTML = '<strong class="text-rose-400">ALERTAS ACTIVAS EN SIMULACIÓN:</strong><br/>' + failures.join('<br/>');
+        badge.className = "px-3.5 py-1.5 rounded-full text-xs font-mono font-bold bg-palette-blush text-palette-blushDark border border-[#eed0c5] flex items-center gap-1.5";
+        badge.innerHTML = '<span class="w-2 h-2 rounded-full bg-palette-blushDark"></span><span>RIESGO DE COLAPSO</span>';
+        fbBox.className = "mt-5 p-4 rounded-xl bg-palette-blush/30 border border-[#eed0c5] text-xs font-mono flex items-start gap-3";
+        fbText.innerHTML = '<strong class="text-palette-blushDark">PUNTOS DE COLAPSO DETECTADOS EN SIMULACIÓN:</strong><br/>' + failures.join('<br/>');
       }
     }
 
-    // Modal teleprompter
+    // TELEPROMPTER MODAL & TIMER
     function toggleTeleprompter() {
       const drawer = document.getElementById('teleprompterDrawer');
       drawer.classList.toggle('translate-x-full');
     }
 
-    // Timer de sustentación
     let timerInterval = null;
     let secondsElapsed = 0;
     function toggleTimer() {
@@ -849,23 +872,21 @@
         clearInterval(timerInterval);
         timerInterval = null;
         btn.textContent = 'Reanudar';
-        btn.className = "px-2 py-1 text-[11px] font-mono rounded bg-emerald-500/20 text-emerald-300 hover:bg-emerald-500/30";
       } else {
         btn.textContent = 'Pausar';
-        btn.className = "px-2 py-1 text-[11px] font-mono rounded bg-red-500/20 text-red-300 hover:bg-red-500/30";
         timerInterval = setInterval(() => {
           secondsElapsed++;
           const mins = String(Math.floor(secondsElapsed / 60)).padStart(2, '0');
           const secs = String(secondsElapsed % 60).padStart(2, '0');
           display.textContent = `${mins}:${secs}`;
           if (secondsElapsed > 120) {
-            display.className = "font-mono text-sm font-bold text-red-400 animate-pulse";
+            display.className = "font-mono text-sm font-bold text-palette-blushDark";
           }
         }, 1000);
       }
     }
 
-    // Inicializaciones
+    // Inicializar primer agente
     showAgentDetail('hogares');
   </script>
 </body>

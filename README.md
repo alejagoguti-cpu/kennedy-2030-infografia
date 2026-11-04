@@ -1,15 +1,16 @@
-# 🏙️ Kennedy 2030: Simulación Urbana Basada en Agentes (ABM)
+# 🌿 Kennedy 2030: Simulación Urbana Basada en Agentes (ABM)
 
 > **De los Modelos Mentales Implícitos a la Explicación Generativa y la Prevención del Colapso Territorial**  
-> *Marco Epistemológico, Dinámica de Sistemas y Diseño Espacial · Localidad de Kennedy, Bogotá D.C.*
+> *Marco Epistemológico, Dinámica de Sistemas y Diseño Espacial · Localidad de Kennedy, Bogotá D.C.*  
+> *Inspirado en el diseño editorial y paisajístico: "form follows fictions &bull; from ego-prediction to eco-generation"*
 
 ---
 
-[![Status](https://img.shields.io/badge/Estado-Prototipo%20de%20Investigaci%C3%B3n-00b4d8?style=for-the-badge)](#)
-[![Live Demo](https://img.shields.io/badge/Web-Infograf%C3%ADa%20Online-10b981?style=for-the-badge&logo=githubpages&logoColor=white)](https://alejagoguti-cpu.github.io/kennedy-2030-infografia/)
-[![Territorio](https://img.shields.io/badge/Territorio-Kennedy%20%7C%20Bogot%C3%A1%20D.C.-2a9d8f?style=for-the-badge)](#)
-[![Epistemología](https://img.shields.io/badge/Epistemolog%C3%ADa-Joshua%20M.%20Epstein%20(2008)-e76f51?style=for-the-badge)](#)
-[![Licencia](https://img.shields.io/badge/Licencia-MIT-f4a261?style=for-the-badge)](#)
+[![Paleta](https://img.shields.io/badge/Diseño-Minimalista%20Editorial-1c221e?style=flat-square)](#)
+[![Live Demo](https://img.shields.io/badge/Web-Infograf%C3%ADa%20Online-335c3d?style=flat-square&logo=githubpages&logoColor=white)](https://alejagoguti-cpu.github.io/kennedy-2030-infografia/)
+[![Territorio](https://img.shields.io/badge/Territorio-Kennedy%20%7C%20Bogot%C3%A1-856a29?style=flat-square)](#)
+[![Epistemología](https://img.shields.io/badge/Epistemolog%C3%ADa-Joshua%20M.%20Epstein%20(2008)-994a36?style=flat-square)](#)
+[![Licencia](https://img.shields.io/badge/Licencia-MIT-525a55?style=flat-square)](#)
 
 ---
 
