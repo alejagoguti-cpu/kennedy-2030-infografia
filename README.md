@@ -1,8 +1,7 @@
 # 🌿 Kennedy 2030: Simulación Urbana Basada en Agentes (ABM)
 
 > **De los Modelos Mentales Implícitos a la Explicación Generativa y la Prevención del Colapso Territorial**  
-> *Marco Epistemológico, Dinámica de Sistemas y Diseño Espacial · Localidad de Kennedy, Bogotá D.C.*  
-> *Inspirado en el diseño editorial y paisajístico: "form follows fictions &bull; from ego-prediction to eco-generation"*
+> *Marco Epistemológico, Dinámica de Sistemas y Diseño Espacial · Localidad de Kennedy, Bogotá D.C.*
 
 ---
 
