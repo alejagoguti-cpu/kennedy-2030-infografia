@@ -1,19 +1,33 @@
-# 🏙️ Kennedy 2030: De los Modelos Mentales Implícitos a la Explicación Generativa
+# 🏙️ Kennedy 2030: Simulación Urbana Basada en Agentes (ABM)
 
-> **Superando el mito de la predicción: hacer transparentes los supuestos del territorio popular**  
-> *Diapositiva 1 · Marco Epistemológico y Metodológico de Simulación Urbana Basada en Agentes (ABM)*
+> **De los Modelos Mentales Implícitos a la Explicación Generativa y la Prevención del Colapso Territorial**  
+> *Marco Epistemológico, Dinámica de Sistemas y Diseño Espacial · Localidad de Kennedy, Bogotá D.C.*
 
 ---
 
 [![Status](https://img.shields.io/badge/Estado-Prototipo%20de%20Investigaci%C3%B3n-00b4d8?style=for-the-badge)](#)
 [![Live Demo](https://img.shields.io/badge/Web-Infograf%C3%ADa%20Online-10b981?style=for-the-badge&logo=githubpages&logoColor=white)](https://alejagoguti-cpu.github.io/kennedy-2030-infografia/)
 [![Territorio](https://img.shields.io/badge/Territorio-Kennedy%20%7C%20Bogot%C3%A1%20D.C.-2a9d8f?style=for-the-badge)](#)
-[![Enfoque](https://img.shields.io/badge/Epistemolog%C3%ADa-Explicaci%C3%B3n%20Generativa%20(Epstein%202008)-e76f51?style=for-the-badge)](#)
+[![Epistemología](https://img.shields.io/badge/Epistemolog%C3%ADa-Joshua%20M.%20Epstein%20(2008)-e76f51?style=for-the-badge)](#)
 [![Licencia](https://img.shields.io/badge/Licencia-MIT-f4a261?style=for-the-badge)](#)
 
 ---
 
-## 🧭 Infografía Conceptual: La Transición Metodológica
+## 📑 Índice de Diapositivas e Infografías
+
+* [Diapositiva 1: De los Modelos Mentales Implícitos a la Explicación Generativa](#-diapositiva-1-de-los-modelos-mentales-implícitos-a-la-explicación-generativa)
+* [Diapositiva 2: Descubrir Bucles de Colapso y Disciplinar la Política Pública Territorial](#-diapositiva-2-descubrir-bucles-de-colapso-y-disciplinar-la-política-pública-territorial)
+* [💻 Dashboard Web Interactivo con Modo Sustentador](#-vista-interactiva-en-web)
+* [📚 Bibliografía y Referencias Clave](#-bibliografía-de-referencia)
+
+---
+
+# 📊 DIAPOSITIVA 1
+## ¿Por qué modelar Kennedy 2030? De los modelos mentales implícitos a la explicación generativa
+
+> *Superando el mito de la predicción: hacer transparentes los supuestos del territorio popular*
+
+### 🧭 Infografía Conceptual: La Transición Metodológica
 
 ```mermaid
 flowchart LR
@@ -55,122 +69,151 @@ flowchart LR
     class EXPLICITO,E,F,G,H exp;
 ```
 
----
+### 📌 Puntos Clave de la Diapositiva 1
 
-## 📌 Núcleos Teóricos y Evidencia Territorial
+1. **"Usted ya es un modelador" (Epstein, 2008):**
+   * Todo líder de la JAC, funcionario distrital o comerciante de Corabastos opera con un modelo mental implícito lleno de supuestos no verificados (*"la gente pobre nunca va a comer hongos"*, *"las huertas comunitarias siempre fracasan por desidia"*).
+   * Los modelos implícitos ocultan sus supuestos y son imposibles de calibrar o refutar. Modelar significa **hacer explícitas las reglas** para que la comunidad pueda debatirlas con rigor.
 
-| Dimensión | 1. "Usted ya es un modelador" | 2. Explicar no es Predecir | 3. Parámetros del Territorio |
-| :--- | :--- | :--- | :--- |
-| **Referencia** | Joshua M. Epstein (2008) | Razón 1 de Epstein: *Explanation ≠ Prediction* | Territorio Popular Kennedy (Bogotá) |
-| **Premisa** | Nadie decide sin un modelo previo; la diferencia radica en la visibilidad del código mental. | Modelamos para entender la *mecánica causal*, no para adivinar fechas ni cifras mágicas. | La simulación se encarna en la geografía física, económica y biológica real. |
-| **Realidad Local** | Líderes de JAC, funcionarios distritales y comerciantes de Corabastos operan con axiomas no comprobados. | Así como la tectónica explica los sismos sin adivinar el minuto exacto, evaluamos la estabilidad del circuito. | Coordenadas reales de María Paz, Patio Bonito y la ronda ecológica del Humedal El Burro. |
-| **Transformación** | Llevar el prejuicio individual a una regla explícita que la comunidad pueda discutir con rigor. | Demostrar si interacciones locales generan un tejido alimentario que resista la fuerza de Corabastos. | Agentes humanos (aversión cultural, crédito/fiado, fatiga) + Agentes biológicos (micelio vs. moho). |
+2. **Explicar no es Predecir (Razón 1 de Epstein):**
+   * La tectónica de placas explica los terremotos sin predecir el minuto exacto del sismo.
+   * Nuestro objetivo **NO** es predecir cuántos kilos exactos de acelga o seta ostra se comerán en octubre de 2030.
+   * Nuestro objetivo es una **EXPLICACIÓN GENERATIVA**: demostrar si reglas locales de interacción entre tenderos, huerteros y familias pueden generar macroscópicamente un circuito alimentario estable que no colapse ante las presiones de Corabastos.
 
----
+3. **Decisiones del Modelo Conectadas al Territorio:**
+   * **Entorno:** Topografía y morfología 3D de Kennedy (barrios María Paz, Patio Bonito, Humedal El Burro).
+   * **Agentes heterogéneos:** Hogares (aversión cultural al hongo), Tenderos (margen y fiado), Gestores de huerta (curva de energía finita).
+   * **Agentes no humanos:** Micelio que coloniza vs. moho que infecta.
 
-### 1️⃣ "Usted ya es un modelador" *(Epstein, 2008)*
+> 💬 **CITA DESTACADA AL PIE (D1):**  
+> *"La elección no es si construir modelos o no; la elección es si construir modelos explícitos donde los supuestos se expongan con claridad para que otros puedan evaluarlos y replicarlos."*  
+> — **Joshua M. Epstein (2008)**
 
-> *“Todo líder de la JAC, funcionario distrital o comerciante de Corabastos opera con un modelo mental implícito lleno de supuestos no verificados.”*
-
-* **La falacia de la neutralidad:** Quien afirma no usar modelos suele estar gobernado por el más peligroso de todos: el **modelo mental implícito**, invisible e incuestionable.
-* **Prejuicios típicos en el territorio:**
-  * ❌ *«La gente de bajos recursos jamás adoptará el consumo de setas u hongos comestibles.»*
-  * ❌ *«Las huertas comunitarias siempre son abandonadas por simple desidia de los vecinos.»*
-* **El giro epistémico:** Modelar en código no es deshumanizar el barrio; es **democratizar los supuestos**. Al escribir la regla, cualquier vecino, gestor o académico puede auditarla, calibrarla o refutarla.
-
----
-
-### 2️⃣ Explicar no es Predecir *(Razón 1 de Epstein)*
-
-```
-        PREDICCIÓN ORACULAR                  EXPLICACIÓN GENERATIVA
-   ┌─────────────────────────────┐        ┌─────────────────────────────┐
-   │ "¿Cuántos kg exactos de    │   VS   │ "¿Qué micro-reglas entre    │
-   │ acelga o setas se comerán   │        │ tenderos, familias y huertas│
-   │ en octubre de 2030?"        │        │ generan un sistema estable?"│
-   └─────────────────────────────┘        └─────────────────────────────┘
-           [Imposible / Frágil]                   [Generativo / Robusto]
-```
-
-* **La analogía sismológica:** La tectónica de placas explica cabalmente por qué ocurren los terremotos sin necesidad de predecir el minuto exacto del próximo temblor.
-* **Objetivo de Kennedy 2030:** No buscamos una profecía estocástica. Buscamos una **explicación generativa**: probar computacionalmente si un conjunto de reglas locales descentralizadas puede sostener una red alimentaria barrial sin ser asfixiada por la gravedad económica de Corabastos.
-
----
-
-### 3️⃣ Decisiones del Modelo Conectadas al Territorio
-
-La arquitectura del modelo no es un plano abstracto; está calibrada en tres capas interconectadas:
-
-```
-┌─────────────────────────────────────────────────────────────────────────────┐
-│ 🗺️ CAPA 1: ENTORNO TOPOGRÁFICO Y MORFOLÓGICO 3D                             │
-│ • Geometría urbana: Barrio María Paz y Patio Bonito (densidad, pasajes).   │
-│ • Borde ecológico: Humedal El Burro (microclima, humedad relativa, suelo).  │
-├─────────────────────────────────────────────────────────────────────────────┤
-│ 👥 CAPA 2: AGENTES HETEROGÉNEOS HUMANOS                                      │
-│ • Hogares: Nivel de ingreso, hábitos culinarios, aversión cultural a hongos.│
-│ • Tenderos de Barrio: Márgenes comerciales, cupo de fiado y proximidad.     │
-│ • Gestores de Huerta: Curva de energía finita, tiempo de cuidado y relevo.  │
-├─────────────────────────────────────────────────────────────────────────────┤
-│ 🍄 CAPA 3: AGENTES NO HUMANOS Y BIOLÓGICOS                                  │
-│ • Micelio Fúngico: Tasa de colonización de sustrato, demanda de humedad.    │
-│ • Moho Contaminante: Vector de infección cruzada y estrés biológico.        │
-└─────────────────────────────────────────────────────────────────────────────┘
-```
-
----
-
-## 💬 Cita Destacada
-
-> <kbd>**JOSHUA M. EPSTEIN (2008)**</kbd>  
-> *"Why Model?" — Journal of Artificial Societies and Social Simulation*
->
-> ❝ **La elección no es si construir modelos o no; la elección es si construir modelos explícitos donde los supuestos se expongan con claridad para que otros puedan evaluarlos y replicarlos.** ❞
-
----
-
-## 🎙️ Notas de Sustentación (Script para Exposición Oral)
-
-> [!TIP]
-> **Pauta para el orador:** Mirada firme al jurado, tono pedagógico y seguro. Duración estimada: **90 a 120 segundos**.
-
+#### 🎙️ Notas de Sustentación (Diapositiva 1):
 ```markdown
 "Profesores: empezamos apoyándonos en Joshua Epstein para desarmar el primer gran prejuicio sobre 
-nuestro proyecto: la idea de que modelamos para 'adivinar el futuro'. 
-
-Epstein demuestra que todos ya tenemos un modelo en la cabeza cuando opinamos sobre una política 
-pública, pero suele ser un modelo implícito, donde los prejuicios están escondidos. 
-
-Al modelar Kennedy en un sistema multiagente sobre nuestra base 3D, obligamos al proyecto a ser 
-explícito: ¿a qué precio compra el tendero de Patio Bonito?, ¿cuántas horas de sol necesita el 
-'tendedero'?, ¿cuándo la tingüa abandona el humedal? 
-
-No buscamos una predicción milagrosa, sino una explicación generativa de cómo la autonomía alimentaria 
-puede emerger desde abajo."
+nuestro proyecto: la idea de que modelamos para 'adivinar el futuro'. Epstein demuestra que todos ya 
+tenemos un modelo en la cabeza cuando opinamos sobre una política pública, pero suele ser un modelo 
+implícito, donde los prejuicios están escondidos. Al modelar Kennedy en un sistema multiagente sobre 
+nuestra base 3D, obligamos al proyecto a ser explícito: ¿a qué precio compra el tendero de Patio Bonito?, 
+¿cuántas horas de sol necesita el 'tendedero'?, ¿cuándo la tingüa abandona el humedal? No buscamos una 
+predicción milagrosa, sino una explicación generativa de cómo la autonomía alimentaria puede emerger 
+desde abajo."
 ```
 
-### 🎯 Claves Retóricas durante la Sustentación:
-1. **Énfasis inicial:** Golpear de inmediato el mito de la "bola de cristal". La simulación es un laboratorio social, no un oráculo.
-2. **Contraste visual:** Señalar con convicción la columna izquierda (caja negra) frente a la columna derecha (parámetros explícitos).
-3. **Anclaje al territorio:** Mencionar nombres concretos (*María Paz*, *Patio Bonito*, *Corabastos*, *Humedal El Burro*) para demostrar arraigo empírico.
-4. **Cierre contundente:** Rematar con la noción de *emergencia bottom-up*.
+---
+
+# 📊 DIAPOSITIVA 2
+## Descubrir bucles de colapso y disciplinar la política pública territorial
+
+> *Las razones para simular: Sensibilidad, límites compensadores e "ignorancia militante"*
+
+### 🧭 Infografía Sistémica: Los 4 Bucles de Colapso vs. Soluciones Arquitectónicas
+
+```mermaid
+flowchart TD
+    subgraph BUCLES["⚠️ BUCLES COMPENSADORES DE COLAPSO (Descubiertos en Simulación)"]
+        direction TB
+        B1["💥 BUCLE B1: DESGASTE HUMANO<br/>Burnout de lideresas a los 5 meses<br/>Huerta abandonada por sobrecarga"]
+        B2["📉 BUCLE B2: REACCIÓN MAYORISTA<br/>Dumping de precios de Corabastos<br/>Quiebra de tiendas que compran local"]
+        B3["⚖️ BUCLE B3: LÍMITE ECOLÓGICO / POT<br/>Invasión de ronda de Humedal El Burro<br/>Decreto 555 y sanciones clausuran huerta"]
+        B4["🍄 BUCLE B4: SATURACIÓN PERECEDERA<br/>Picos de cosecha sin procesar se pudren<br/>Colapso del precio y desincentivo"]
+    end
+
+    subgraph ARQUITECTURA["🏛️ RESPUESTAS ESPACIALES E INSTITUCIONALES DEL PROYECTO"]
+        direction TB
+        S1["🔄 Gobernanza Policéntrica de Ostrom<br/><b>Rotación de roles cada 4 meses</b><br/>(Desactiva B1 reseteando la fatiga)"]
+        S2["🏢 La Bio-Central de Kennedy<br/><b>Compras públicas fijas (Ley 2046)</b><br/>(Blinda el circuito frente a B2)"]
+        S3["📐 Zonificación de Amortiguación<br/><b>Retranqueo estricto del Humedal</b><br/>(Cumple Decreto 555 y neutraliza B3)"]
+        S4["☀️ Pérgola de Secado Solar ('Tendedero')<br/><b>Deshidratado de excedentes en seco</b><br/>(Corta B4 evitando la merma podrida)"]
+    end
+
+    B1 -.->|Intervención de diseño social| S1
+    B2 -.->|Equipamiento de acopio barrial| S2
+    B3 -.->|Regulación morfología espacial| S3
+    B4 -.->|Dispositivo bioclimático| S4
+
+    classDef loop fill:#380e14,stroke:#e63946,stroke-width:2px,color:#fff;
+    classDef solution fill:#072b22,stroke:#2a9d8f,stroke-width:2px,color:#fff;
+
+    class B1,B2,B3,B4 loop;
+    class S1,S2,S3,S4 solution;
+```
+
+---
+
+### 📌 Puntos Clave de la Diapositiva 2
+
+#### 1️⃣ Iluminar Dinámicas Centrales y Límites Ocultos *(Razones 3, 7 y 8 de Epstein)*
+En el discurso tradicional, sembrar huertas siempre "funciona" en el papel. En la simulación computacional descubrimos los bucles de retroalimentación negativa que históricamente provocan el colapso de los proyectos comunitarios en Bogotá:
+
+| Bucle | Denominación | Mecánica Causal de la Falla | Límite Crítico Detectado |
+| :---: | :--- | :--- | :--- |
+| **B1** | **Desgaste / Burnout** | La sobrecarga recae sobre 2 o 3 lideresas comunitarias con energía finita. | Sin rotación institucional, el abandono ocurre a los **5 meses**. |
+| **B2** | **Reacción Mayorista** | Corabastos aplica bajas temporales de precio (*dumping*) ante la competencia. | Las tiendas de barrio quiebran si compran a huerta sin protección de margen. |
+| **B3** | **Límite Ecológico / POT** | Expansión informal hacia la ronda de protección hídrica de Humedal El Burro. | Sanciones ambientales de la CAR y **Decreto Distrital 555 (POT)** clausuran el proyecto. |
+| **B4** | **Saturación Perecedera** | Cosechas pico masivas de setas u hortalizas sin cadena de frío ni procesamiento. | La merma podrida inunda el barrio, hunde los precios y desincentiva el cultivo. |
+
+---
+
+#### 2️⃣ Demostrar Compensaciones y Eficiencias Espaciales *(Razón 10 de Epstein)*
+La simulación prueba que la arquitectura no es adorno estético, sino **amortiguador sistémico**:
+* ☀️ **Pérgola de secado solar (*"Tendedero"*):** Corta de raíz el bucle **B4** al transformar los excedentes de cosecha en setas secas y hierbas deshidratadas de larga vida útil y alto valor agregado.
+* 🏢 **La Bio-Central de Kennedy:** Corta el bucle **B2** al vincular compras institucionales estables (colegios distritales, comedores comunitarios bajo la **Ley 2046 de compras públicas locales**).
+* 🔄 **Gobernanza basada en Elinor Ostrom:** Corta el bucle **B1** estableciendo protocolos comunitarios de relevo obligatorio cada **4 meses**.
+
+---
+
+#### 3️⃣ Disciplinar el Diálogo Político y la "Ignorancia Militante" *(Razones 14 y 16 de Epstein)*
+* **Militant Ignorance:** Epstein acuña este término para referirse a la rigurosa humildad científica: *un compromiso inquebrantable con el "no lo sabemos hasta que no tengamos evidencia cuantificable"*. No nos escudamos en metas de fantasía (*"Kennedy será 100% autosuficiente"*).
+* **Laboratorio de prueba sin víctimas territoriales:** El simulador faculta a las mesas comunitarias de María Paz y Patio Bonito a contrastar escenarios en pantalla (*"¿Qué pasa si la tienda solo compra el 20% local?", "¿Qué ocurre en temporadas de lluvia prolongada?"*) antes de cometer errores millonarios e irreversibles en el suelo real.
+
+---
+
+> 💬 **CITA DESTACADA AL PIE (D2):**  
+> *"Todos los modelos son aproximaciones. El mérito de un buen modelo no es ser perfecto, sino ser fructíferamente erróneo: iluminar las incertidumbres críticas y disciplinar el diálogo de opciones."*  
+> — **Adaptado de Joshua M. Epstein (2008) y George Box**
+
+---
+
+### 🎙️ Notas de Sustentación (Diapositiva 2 - Guion Oral):
+
+> [!IMPORTANT]
+> **Tono del expositor:** Firme, propositivo y con fuerte vinculación entre urbanismo y ciencia de sistemas. Duración objetivo: **90 a 120 segundos**.
+
+```markdown
+"En esta segunda diapositiva demostramos por qué el simulador es indispensable antes de construir 
+un solo metro cuadrado. 
+
+En los proyectos sociales de Bogotá se comete con frecuencia el error de construir infraestructura 
+a ciegas que luego queda vacía o abandonada. Con nuestro modelo identificamos con claridad cuatro 
+frenos de colapso: 
+1. El agotamiento del voluntariado (B1),
+2. La reacción comercial de Corabastos (B2),
+3. El límite legal del humedal (B3), y
+4. La sobreproducción de perecederos (B4).
+
+El simulador nos permite hacer análisis de sensibilidad y demostrar que equipamientos como 
+La Bio-Central y las estaciones de deshidratado no son caprichos formales de diseño, sino 
+dispositivos espaciales indispensables para que el sistema barrial no colapse."
+```
 
 ---
 
 ## 💻 Vista Interactiva en Web
 
-Este repositorio cuenta con una versión infográfica web interactiva lista para navegar en `index.html`:
-* 🖥️ **Dashboard visual responsive** con tipografía moderna y paleta agro-urbana.
-* 🎛️ **Simulador conceptual de supuestos explícitos**.
-* 📜 **Teleprompter interactivo** para el orador con cronómetro y selector de ritmo.
+El archivo `index.html` cuenta con un switcher de diapositivas interactivo:
+1. Navega entre **Diapositiva 1** y **Diapositiva 2**.
+2. **Explorador de Bucles B1-B4:** Inspecciona cada bucle de falla y su respuesta arquitectónica.
+3. **Simulador de Sensibilidad en Vivo:** Modifica el umbral de compras públicas fijas, la capacidad del tendedero y la rotación comunitaria para ver si el circuito entra en colapso o estabilidad.
+4. **Teleprompter Dual:** Guion de sustentación específico para cada diapositiva con contador de tiempo de exposición.
 
-Para abrir localmente:
 ```bash
-# Opción 1: Abrir directamente en el explorador
+# Probar localmente en Windows:
 start index.html
 
-# Opción 2: Servir con Python
-python -m http.server 8000
+# O visitar directamente en GitHub Pages:
+# https://alejagoguti-cpu.github.io/kennedy-2030-infografia/
 ```
 
 ---
@@ -178,5 +221,7 @@ python -m http.server 8000
 ## 📚 Bibliografía de Referencia
 
 * **Epstein, J. M. (2008).** *Why Model?* Journal of Artificial Societies and Social Simulation, 11(4), 12.
-* **Axelrod, R. (1997).** *The Complexity of Cooperation: Agent-Based Models of Competition and Collaboration.* Princeton University Press.
-* **Alcaldía Mayor de Bogotá & Secretaría Distrital de Planeación.** *Diagnóstico Territorial de la Localidad de Kennedy.*
+* **Box, G. E. P. (1976).** *Science and Statistics.* Journal of the American Statistical Association, 71(356), 791-799.
+* **Ostrom, E. (1990).** *Governing the Commons: The Evolution of Institutions for Collective Action.* Cambridge University Press.
+* **Alcaldía Mayor de Bogotá.** *Decreto 555 de 2021 (Plan de Ordenamiento Territorial de Bogotá - POT).*
+* **Congreso de la República de Colombia.** *Ley 2046 de 2020 (Compras Públicas de Alimentos de la Agricultura Campesina, Familiar y Comunitaria).*
