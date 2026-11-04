@@ -6,6 +6,7 @@
 ---
 
 [![Status](https://img.shields.io/badge/Estado-Prototipo%20de%20Investigaci%C3%B3n-00b4d8?style=for-the-badge)](#)
+[![Live Demo](https://img.shields.io/badge/Web-Infograf%C3%ADa%20Online-10b981?style=for-the-badge&logo=githubpages&logoColor=white)](https://alejagoguti-cpu.github.io/kennedy-2030-infografia/)
 [![Territorio](https://img.shields.io/badge/Territorio-Kennedy%20%7C%20Bogot%C3%A1%20D.C.-2a9d8f?style=for-the-badge)](#)
 [![Enfoque](https://img.shields.io/badge/Epistemolog%C3%ADa-Explicaci%C3%B3n%20Generativa%20(Epstein%202008)-e76f51?style=for-the-badge)](#)
 [![Licencia](https://img.shields.io/badge/Licencia-MIT-f4a261?style=for-the-badge)](#)
